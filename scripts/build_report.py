@@ -387,8 +387,24 @@ if not qt:
 
 sep = "━━━━━━━━━━━━━━━━━━━━━━━━"
 
+# TLDR — one line per notable thing
+tldr_lines = []
+if total_commits > 0:
+    tldr_lines.append(f"{total_commits} commits across {active_count} repo(s)")
+if ai["commits"]:
+    tldr_lines.append("human.tech.AI: major feature push live on Render")
+if docs["commits"]:
+    tldr_lines.append(f"docs.human.tech: {len(docs['commits'])} of your commits (link/typo sprint)")
+if idocs["issues"]:
+    tldr_lines.append(f"{len(idocs['issues'])} issues assigned to you in internal-docs")
+if not tldr_lines:
+    tldr_lines.append("Quiet day — no notable commits or open items")
+tldr = " · ".join(tldr_lines)
+
 report = f"""📊 DEV UPDATE — {TODAY}
 Generated: {NOW.strftime("%H:%M")} UTC
+
+TL;DR: {tldr}
 
 {sep}
 HEADLINE
