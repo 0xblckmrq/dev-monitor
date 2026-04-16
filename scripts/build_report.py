@@ -37,8 +37,10 @@ def branches(repo):
     return non_main, "\n".join(f"  {b}" for b in non_main) or "  (none)"
 
 REPOS = [
-    ("0xblckmrq/human.tech.AI",  "human.tech.AI",  "0xblckmrq"),
-    ("0xblckmrq/human.tech.bot", "human.tech.bot", "0xblckmrq"),
+    ("holonym-foundation/docs.human.tech", "docs.human.tech", "holonym-foundation"),
+    ("0xblckmrq/human.tech.AI",            "human.tech.AI",   "0xblckmrq"),
+    ("0xblckmrq/human.tech.bot",           "human.tech.bot",  "0xblckmrq"),
+    ("holonym-foundation/internal-docs",   "internal-docs",   "holonym-foundation"),
 ]
 
 sections = []
@@ -62,6 +64,7 @@ for slug, name, org in REPOS:
 # Risk analysis
 risks = []
 ai_branches = all_branches.get("0xblckmrq/human.tech.AI", [])
+docs_branches = all_branches.get("holonym-foundation/docs.human.tech", [])
 known_long_lived = {"staging"}
 feature_branches = [b for b in ai_branches if b not in known_long_lived]
 if len(feature_branches) >= 5:
@@ -80,7 +83,7 @@ risk_block = "\n".join(f"{i+1}. {r}" for i, r in enumerate(risks)) if risks else
 
 next_actions = [
     "Review and merge or close stale branches in human.tech.AI.",
-    "Push holonym-foundation repos to 0xblckmrq to enable full monitoring without a PAT.",
+    "Review open PRs in internal-docs — large backlog detected.",
 ]
 actions_block = "\n".join(f"{i+1}. {a}" for i, a in enumerate(next_actions))
 
