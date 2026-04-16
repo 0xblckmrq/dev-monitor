@@ -37,9 +37,8 @@ def branches(repo):
     return non_main, "\n".join(f"  {b}" for b in non_main) or "  (none)"
 
 REPOS = [
-    ("holonym-foundation/docs.human.tech", "docs.human.tech", "holonym-foundation"),
-    ("0xblckmrq/human.tech.AI",            "human.tech.AI",   "0xblckmrq"),
-    ("0xblckmrq/human.tech.bot",           "human.tech.bot",  "0xblckmrq"),
+    ("0xblckmrq/human.tech.AI",  "human.tech.AI",  "0xblckmrq"),
+    ("0xblckmrq/human.tech.bot", "human.tech.bot", "0xblckmrq"),
 ]
 
 sections = []
@@ -59,17 +58,6 @@ for slug, name, org in REPOS:
         + "\n".join(pr_lines) + "\n"
         f"Branches (non-main):\n{branch_str}"
     )
-
-# internal-docs (private)
-internal = gh("/repos/holonym-foundation/internal-docs/commits?since={SINCE}&per_page=1")
-i_commits = len(internal) if isinstance(internal, list) else "private repo"
-internal_pr = gh("/repos/holonym-foundation/internal-docs/pulls?state=open&per_page=1")
-i_prs = len(internal_pr) if isinstance(internal_pr, list) else "private repo"
-sections.append(
-    f"📁 internal-docs (holonym-foundation)\n"
-    f"Commits (24h): {i_commits}\n"
-    f"Open PRs: {i_prs}"
-)
 
 # Risk analysis
 risks = []
@@ -92,8 +80,7 @@ risk_block = "\n".join(f"{i+1}. {r}" for i, r in enumerate(risks)) if risks else
 
 next_actions = [
     "Review and merge or close stale branches in human.tech.AI.",
-    "Confirm docs.human.tech is still active and publicly accessible.",
-    "Add a scoped PAT secret (HOLONYM_TOKEN) to enable internal-docs monitoring.",
+    "Push holonym-foundation repos to 0xblckmrq to enable full monitoring without a PAT.",
 ]
 actions_block = "\n".join(f"{i+1}. {a}" for i, a in enumerate(next_actions))
 
