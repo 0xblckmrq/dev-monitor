@@ -35,17 +35,41 @@ def days_old(iso):
     except Exception:
         return 0
 
-def format_body(text, max_chars=2000):
-    """Preserve issue/PR body structure — keep headers, bullets, tables."""
-    if not text:
-        return "No description provided."
-    text = text.strip()
-    # indent each line for report readability
-    lines = text.splitlines()
-    formatted = "\n".join(f"  {l}" if l.strip() else "" for l in lines)
-    if len(formatted) > max_chars:
-        formatted = formatted[:max_chars] + "\n  [... truncated — see issue for full content]"
-    return formatted
+def extract_section(body, *headers):
+    """Extract content under a markdown header."""
+    lines = body.splitlines()
+    result = []
+    in_section = False
+    for line in lines:
+        stripped = line.strip().lstrip("#").strip().lower()
+        if any(stripped == h.lower() for h in headers):
+            in_section = True
+            continue
+        if in_section:
+            if line.startswith("#"):
+                break
+            result.append(line)
+    return "\n".join(result).strip()
+
+def extract_my_role(body, username):
+    """Find the line/paragraph where the user is mentioned and their role."""
+    lines = body.splitlines()
+    for i, line in enumerate(lines):
+        if f"@{username}" in line or f"@{username.lower()}" in line.lower():
+            # grab the line and next few lines for context
+            chunk = lines[i:i+4]
+            return "\n".join(l for l in chunk if l.strip())
+    return ""
+
+def extract_pending_items(body):
+    """Extract unchecked action items from the body."""
+    return [l.strip().lstrip("- ").lstrip("* ").lstrip("[ ] ").strip()
+            for l in body.splitlines()
+            if l.strip().startswith("- [ ]") or l.strip().startswith("* [ ]")]
+
+def extract_downstream(body):
+    """Extract downstream/flows-into section."""
+    return extract_section(body, "Downstream", "Flows into", "Once finalized")
 
 def get_commits(repo, filter_user=None):
     data = gh(f"/repos/{repo}/commits?since={SINCE}&per_page=30")
@@ -107,80 +131,86 @@ def get_pr_detail(repo, number):
 
 def expand_issue_action(repo, issue):
     detail = get_issue_detail(repo, issue["number"])
-    body_text = format_body(detail.get("body", "")) if isinstance(detail, dict) else "No description provided."
+    body = detail.get("body", "") if isinstance(detail, dict) else ""
     labels = [l["name"] for l in issue.get("labels", [])]
     assignees = [a["login"] for a in issue.get("assignees", [])] or [ME]
     updated = age(detail.get("updated_at", "")) if isinstance(detail, dict) else "?"
     opened = age(issue["created_at"])
-    label_str = f" [{', '.join(labels)}]" if labels else ""
     comments = detail.get("comments", 0) if isinstance(detail, dict) else 0
     url = issue.get("html_url", f"https://github.com/{repo}/issues/{issue['number']}")
-
-    # infer impact
     title = issue["title"]
-    impact = "Unblocks documentation alignment and team awareness."
-    if "gtm" in title.lower() or "traction" in title.lower():
-        impact = "Affects go-to-market execution and team ownership clarity."
-    elif "docs" in title.lower() or "documentation" in title.lower() or "nextra" in title.lower():
-        impact = "Directly affects what external users and developers see."
-    elif "bot" in title.lower() or "architecture" in title.lower():
-        impact = "Affects the live Discord AI bot's stability and documentation coverage."
-    elif "migration" in title.lower():
-        impact = "Blocking or at risk of blocking dependent work until resolved."
+    label_str = f" [{', '.join(labels)}]" if labels else ""
 
-    return f"""**Title:** {title}{label_str}
-{url}
+    # Extract relevant parts
+    my_role = extract_my_role(body, ME)
+    action_section = extract_section(body, "Action", "Next Steps", "Your action")
+    downstream = extract_downstream(body)
+    pending = extract_pending_items(body)
 
-**Context:**
-• Repo: {repo} | Issue #{issue['number']} | Opened {opened} | Last updated {updated} | {comments} comment(s)
-• Owners: {', '.join(assignees)}
+    # Build concise output
+    lines = [f"Issue #{issue['number']} — {title}{label_str}"]
+    lines.append(f"{repo} → {url}")
+    lines.append(f"Opened {opened} | Last updated {updated} | {comments} comment(s) | Owners: {', '.join(assignees)}")
+    lines.append("")
 
-{body_text}
+    if my_role:
+        lines.append(f"Your role:")
+        for l in my_role.splitlines():
+            if l.strip():
+                lines.append(f"  ▎ {l.strip()}")
+        lines.append("")
 
-**Current Status:**
-• Open and assigned to you. Last updated {updated}.
+    if action_section:
+        lines.append("What needs to happen:")
+        for l in action_section.splitlines()[:8]:
+            if l.strip():
+                lines.append(f"  {l.strip()}")
+        lines.append("")
 
-**Next Steps:**
-• Review and comment, close, or open a PR as appropriate.
-• If blocked, leave a comment so it's visible to the team.
+    if pending:
+        lines.append("Open items:")
+        for item in pending[:5]:
+            lines.append(f"  ☐ {item}")
+        lines.append("")
 
-**Impact:** {impact}
-"""
+    if downstream:
+        lines.append("Once resolved, flows into:")
+        for l in downstream.splitlines()[:5]:
+            if l.strip():
+                lines.append(f"  {l.strip()}")
+        lines.append("")
+
+    lines.append(f"→ {url}")
+
+    return "\n".join(lines)
 
 def expand_pr_action(repo, pr, role="review"):
     detail = get_pr_detail(repo, pr["number"])
-    body_text = format_body(detail.get("body", ""), max_chars=1500) if isinstance(detail, dict) else "No PR description provided."
+    body = detail.get("body", "") if isinstance(detail, dict) else ""
     opened = age(pr["created_at"])
     updated = age(detail.get("updated_at", "")) if isinstance(detail, dict) else "?"
-    draft = " (DRAFT)" if pr.get("draft") else ""
+    draft = " [DRAFT]" if pr.get("draft") else ""
     author = (pr.get("user") or {}).get("login", "unassigned")
     url = pr.get("html_url", f"https://github.com/{repo}/pull/{pr['number']}")
     comments = detail.get("comments", 0) if isinstance(detail, dict) else 0
 
-    if role == "created":
-        action_line = "• Your PR — check if it's ready to merge or needs a reviewer assigned."
-    elif role == "assigned":
-        action_line = "• You are assigned — triage, review, or merge as appropriate."
-    else:
-        action_line = "• Your review has been requested — leave feedback or approve."
+    action_line = {
+        "created": "Your PR — check if it's ready to merge or needs a reviewer assigned.",
+        "assigned": "You are assigned — triage, review, or merge as appropriate.",
+        "review":   "Review requested from you — leave feedback or approve.",
+    }.get(role, "")
 
-    return f"""**Title:** {pr['title']}{draft}
-{url}
+    summary = extract_section(body, "Summary", "Description", "What", "Overview")
+    summary_line = summary.splitlines()[0].strip() if summary else ""
 
-**Context:**
-• Repo: {repo} | PR #{pr['number']} | Opened {opened} by {author} | Last updated {updated} | {comments} comment(s)
-
-{body_text}
-
-**Current Status:**
-• Open{draft}. Last updated {updated}.
-
-**Next Steps:**
-{action_line}
-• If blocked, comment and label accordingly.
-
-**Impact:** Keeping PRs moving reduces review lag and prevents branch drift.
-"""
+    lines = [f"PR #{pr['number']} — {pr['title']}{draft}"]
+    lines.append(f"{repo} → {url}")
+    lines.append(f"Opened {opened} by {author} | Updated {updated} | {comments} comment(s)")
+    if summary_line:
+        lines.append(f"\n  {summary_line}")
+    lines.append(f"\nYour action: {action_line}")
+    lines.append(f"→ {url}")
+    return "\n".join(lines)
 
 def expand_branch_action(repo, branch):
     return f"""**Title:** Clean up stale branch — {branch['name']}
