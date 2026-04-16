@@ -1,66 +1,38 @@
-📊 DAILY DEV REPORT — 2026-04-16 UTC
-Generated: 20:16 UTC
+📊 DEV UPDATE — April 16, 2026
+Generated: 20:26 UTC
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
+HEADLINE
+18 commits landed in the last 24 hours across 2 repo(s).  The most active repo is human.tech.AI — latest: "Set start command to scrape then serve for Render deployment". You have 4 open issues assigned in internal-docs requiring attention.
 
-📁 human.tech.AI (0xblckmrq)
-Open PRs: 0  |  Commits (24h): 12
-  2c56c2c Set start command to scrape then serve for Render deployment
-  ca2cd9d Merge all features into main: slash commands, feedback, scrape-once architecture
-  cc5e5e0 Merge pull request #8 from 0xblckmrq/update-overview
-  c2dfb25 Update BOT_OVERVIEW.md to reflect current architecture
-  e48d8c5 Update BOT_OVERVIEW.md to reflect current architecture
-  4613ead Merge pull request #7 from 0xblckmrq/add-lockfile
-  330d59c Add package-lock.json for reproducible dependency installs
-  c092810 Restructure to scrape-once, serve-forever architecture
-  876f1e2 Fix JS-rendered blog pages returning 20 words by adding Puppeteer fallback
-  73e237d Add 10 new features: slash commands, feedback, multilang, auto-FAQ, digest, follow-up detection, PDF ingestion, change detection, kb-test, configurable redirect
-  705e5bf Merge pull request #3 from 0xblckmrq/security-hardening
-  5a747f6 Add security hardening: content sanitization, rate limiting, logging, source attribution
-PRs: (none)
-Branches:
-  add-lockfile — last commit 18h ago
-  feature-enhancements — last commit 19h ago
-  fix-js-rendered-scraping — last commit 18h ago
-  scrape-once-serve-forever — last commit 8h ago
-  security-hardening — last commit 19h ago
-  staging — last commit 8d ago
-  update-overview — last commit 8h ago
-
-📁 human.tech.bot (0xblckmrq)
-Open PRs: 0  |  Commits (24h): 0
-  (none in last 24h)
-PRs: (none)
-Branches:
-  staging — last commit 9d ago
-
-📁 docs.human.tech (holonym-foundation)  [my activity only]
-My commits (24h): 6
-  9847a3f Fix embed getting-access hyperlinks to absolute paths
-  46d6329 Fix 31 typos across 9 documentation files
-  3e93c06 Convert all relative links and redirects to absolute paths
-  84bc779 Fix relative links in index pages resolving to wrong paths
-  bb8ee27 Fix broken external links across documentation
-  d982a08 Fix broken redirect paths in index.mdx files
-My PRs / assigned:
-  (none)
-My issues assigned:
-  (none)
-My branches:
-  (none)
-
-📁 internal-docs (holonym-foundation)  [my activity only]
-My commits (24h): 0
-  (none in last 24h)
-My PRs / assigned:
-  (none)
-My issues assigned:
-  #277 human.tech.AI Discord Bot — Architecture Update & Documentation Gaps — opened 7h ago
-  #274 human.tech.AI Discord Bot — Documentation Status & Next Steps — opened 8h ago
-  #201 Docs Migration to Nextra (Vercel) — Status & Next Steps — opened 2d ago
-  #50 Traction team roles and GTM ownership — opened 7d ago
-My branches:
-  (none)
 ━━━━━━━━━━━━━━━━━━━━━━━━
-⚠️  RISKS
-  • No personal activity in 24h: human.tech.bot, internal-docs
+KEY UPDATES
+• **human.tech.AI** — 12 commits pushed today.
+   Recent: Set start command to scrape then serve for Render deployment; Merge all features into main: slash commands, feedback, scrape-once architecture; Merge pull request #8 from 0xblckmrq/update-overview....
+   Context: 7 open branches — most were merged into main today as part of a major feature push (slash commands, feedback system, scrape-once architecture, Render deployment).
+   Impact: Bot is now live on Render with a significantly expanded feature set.
+
+• **human.tech.bot** — No commits in the last 24 hours. Last active 9 days ago.
+
+• **docs.human.tech** — 6 of your commits landed today.
+   Focus: Fix embed getting-access hyperlinks to absolute paths; Fix 31 typos across 9 documentation files; Convert all relative links and redirects to absolute paths.
+   Context: Ongoing link/typo cleanup sprint across the documentation site.
+   Impact: Improves doc reliability for external users and integrators.
+
+• **internal-docs (assigned to you)** — 4 open issue(s):
+   • #277 human.tech.AI Discord Bot — Architecture Update & Documentation Gaps
+   • #274 human.tech.AI Discord Bot — Documentation Status & Next Steps
+   • #201 Docs Migration to Nextra (Vercel) — Status & Next Steps
+   • #50 Traction team roles and GTM ownership
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+NOTABLE DETAILS
+• No notable branch staleness or aged PRs detected.
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+ACTION ITEMS
+→ Review 4 assigned issue(s) in internal-docs — #277, #274, #201, #50
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+QUICK TAKE
+human.tech.AI had a big day — major architecture merged and deployed to Render. Doc cleanup is progressing steadily (6 commits). You have 4 assigned internal-docs issues to keep an eye on.
