@@ -2,7 +2,7 @@ import json, os, time, urllib.request, pathlib, sys
 
 MATRIX_TOKEN = os.environ.get("MATRIX_TOKEN", "")
 MATRIX_SERVER = "https://c2.human.tech"
-ROOM_ID = "!VcEuZFypPvYyYsRDIG:human.tech"
+ROOM_ID = "!kAKkHbqwlHZtqIpDZq:human.tech"
 
 report = pathlib.Path("/tmp/daily-report.txt").read_text()
 txn_id = str(int(time.time() * 1000))
