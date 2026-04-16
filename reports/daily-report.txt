@@ -1,5 +1,5 @@
 📊 DEV UPDATE — April 16, 2026
-Generated: 21:11 UTC
+Generated: 21:41 UTC
 
 TL;DR: 18 commits across 2 repo(s) · human.tech.AI: major feature push live on Render · docs.human.tech: 6 of your commits (link/typo sprint) · 4 issues assigned to you in internal-docs
 
@@ -58,7 +58,7 @@ Open items:
 ────────────────────────────────────────
 Issue #274 — human.tech.AI Discord Bot — Documentation Status & Next Steps [traction:ops]
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/274
-Opened 9h ago | Last updated 9h ago | 0 comment(s) | Owners: lebraat, 0xblckmrq
+Opened 10h ago | Last updated 10h ago | 0 comment(s) | Owners: lebraat, 0xblckmrq
 
 What needs to happen:
   - [ ] Raise `MAX_PAGES_PER_SITE=100` to capture remaining 53 pages of `docs.passport.xyz`
