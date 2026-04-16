@@ -1,58 +1,53 @@
 📊 DAILY DEV REPORT — 2026-04-16 UTC
+Generated: 17:56 UTC
 
-━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━
 
 📁 docs.human.tech (holonym-foundation)
-Commits (24h): 0
-  (unavailable)
-Open PRs: 0
-  (unavailable)
-Branches (non-main):
-(unavailable)
+Open Issues: ?  |  Open PRs: 0  |  Commits (24h): 0
+  (unavailable — private repo or API limit)
+PRs: (none)
+Branches:
+  (none)
 
 📁 human.tech.AI (0xblckmrq)
-Commits (24h): 10
-  2c56c2c Set start command to scrape then serve for Render deployment
-  ca2cd9d Merge all features into main: slash commands, feedback, scrape-once architecture
-  cc5e5e0 Merge pull request #8 from 0xblckmrq/update-overview
-  c2dfb25 Update BOT_OVERVIEW.md to reflect current architecture
-  e48d8c5 Update BOT_OVERVIEW.md to reflect current architecture
-  4613ead Merge pull request #7 from 0xblckmrq/add-lockfile
-  330d59c Add package-lock.json for reproducible dependency installs
-  c092810 Restructure to scrape-once, serve-forever architecture
-  876f1e2 Fix JS-rendered blog pages returning 20 words by adding Puppeteer fallback
-  73e237d Add 10 new features: slash commands, feedback, multilang, auto-FAQ, digest, follow-up detection, PDF ingestion, change detection, kb-test, configurable redirect
-Open PRs: 0
-  (none)
-Branches (non-main):
-  add-lockfile
-  feature-enhancements
-  fix-js-rendered-scraping
-  scrape-once-serve-forever
-  security-hardening
-  staging
-  update-overview
+Open Issues: 0  |  Open PRs: 0  |  Commits (24h): 12
+  2c56c2c [0xblckmrq] Set start command to scrape then serve for Render deployment
+  ca2cd9d [0xblckmrq] Merge all features into main: slash commands, feedback, scrape-once architecture
+  cc5e5e0 [0xblckmrq] Merge pull request #8 from 0xblckmrq/update-overview
+  c2dfb25 [0xblckmrq] Update BOT_OVERVIEW.md to reflect current architecture
+  e48d8c5 [0xblckmrq] Update BOT_OVERVIEW.md to reflect current architecture
+  4613ead [0xblckmrq] Merge pull request #7 from 0xblckmrq/add-lockfile
+  330d59c [0xblckmrq] Add package-lock.json for reproducible dependency installs
+  c092810 [0xblckmrq] Restructure to scrape-once, serve-forever architecture
+  876f1e2 [0xblckmrq] Fix JS-rendered blog pages returning 20 words by adding Puppeteer fallback
+  73e237d [0xblckmrq] Add 10 new features: slash commands, feedback, multilang, auto-FAQ, digest, follow-up detection, PDF ingestion, change detection, kb-test, configurable redirect
+  705e5bf [0xblckmrq] Merge pull request #3 from 0xblckmrq/security-hardening
+  5a747f6 [0xblckmrq] Add security hardening: content sanitization, rate limiting, logging, source attribution
+PRs: (none)
+Branches:
+  add-lockfile — last commit 16h ago
+  feature-enhancements — last commit 17h ago
+  fix-js-rendered-scraping — last commit 16h ago
+  scrape-once-serve-forever — last commit 6h ago
+  security-hardening — last commit 17h ago
+  staging — last commit 8d ago
+  update-overview — last commit 6h ago
 
 📁 human.tech.bot (0xblckmrq)
-Commits (24h): 0
-  (none)
-Open PRs: 0
-  (none)
-Branches (non-main):
-  staging
+Open Issues: 0  |  Open PRs: 0  |  Commits (24h): 0
+  (none in last 24h)
+PRs: (none)
+Branches:
+  staging — last commit 8d ago
 
 📁 internal-docs (holonym-foundation)
-Commits (24h): 0
-  (unavailable)
-Open PRs: 0
-  (unavailable)
-Branches (non-main):
-(unavailable)
+Open Issues: ?  |  Open PRs: 0  |  Commits (24h): 0
+  (unavailable — private repo or API limit)
+PRs: (none)
+Branches:
+  (none)
 
-━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━
 ⚠️  RISKS
-1. human.tech.AI has 6 unmerged feature branches (add-lockfile, feature-enhancements, fix-js-rendered-scraping, scrape-once-serve-forever, …) — review for staleness.
-
-✅ NEXT ACTIONS
-1. Review and merge or close stale branches in human.tech.AI.
-2. Review open PRs in internal-docs — large backlog detected.
+  • No commits in 24h: docs.human.tech, human.tech.bot, internal-docs — expected?
