@@ -1,0 +1,22 @@
+name: Daily Dev Report
+
+on:
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      MATRIX_TOKEN: ${{ secrets.MATRIX_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch data and build report
+        run: python3 scripts/build_report.py
+
+      - name: Post to Matrix
+        run: python3 scripts/post_matrix.py
