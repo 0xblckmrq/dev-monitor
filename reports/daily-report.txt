@@ -1,25 +1,25 @@
 📊 DEV UPDATE — April 16, 2026
-Generated: 20:26 UTC
+Generated: 20:36 UTC
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 HEADLINE
-18 commits landed in the last 24 hours across 2 repo(s).  The most active repo is human.tech.AI — latest: "Set start command to scrape then serve for Render deployment". You have 4 open issues assigned in internal-docs requiring attention.
+18 commits in the last 24 hours across 2 repo(s). Most active: human.tech.AI — "Set start command to scrape then serve for Render deployment". You have 4 open issues assigned to you.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 KEY UPDATES
-• **human.tech.AI** — 12 commits pushed today.
-   Recent: Set start command to scrape then serve for Render deployment; Merge all features into main: slash commands, feedback, scrape-once architecture; Merge pull request #8 from 0xblckmrq/update-overview....
-   Context: 7 open branches — most were merged into main today as part of a major feature push (slash commands, feedback system, scrape-once architecture, Render deployment).
-   Impact: Bot is now live on Render with a significantly expanded feature set.
+• **human.tech.AI** — 12 commits today.
+   Recent: Set start command to scrape then serve for Render deployment; Merge all features into main: slash commands, feedback, scrape-once architecture; Merge pull request #8 from 0xblckmrq/update-overview.
+   Context: 7 open branches. Major feature merge landed (slash commands, scrape-once architecture, Render deployment).
+   Impact: Bot is live on Render with a significantly expanded feature set.
 
-• **human.tech.bot** — No commits in the last 24 hours. Last active 9 days ago.
+• **human.tech.bot** — No commits in 24 hours. Last active 9 days ago.
 
-• **docs.human.tech** — 6 of your commits landed today.
+• **docs.human.tech** — 6 of your commits today.
    Focus: Fix embed getting-access hyperlinks to absolute paths; Fix 31 typos across 9 documentation files; Convert all relative links and redirects to absolute paths.
-   Context: Ongoing link/typo cleanup sprint across the documentation site.
+   Context: Ongoing link/typo cleanup sprint.
    Impact: Improves doc reliability for external users and integrators.
 
-• **internal-docs (assigned to you)** — 4 open issue(s):
+• **internal-docs** — 4 open issue(s) assigned to you:
    • #277 human.tech.AI Discord Bot — Architecture Update & Documentation Gaps
    • #274 human.tech.AI Discord Bot — Documentation Status & Next Steps
    • #201 Docs Migration to Nextra (Vercel) — Status & Next Steps
@@ -31,8 +31,78 @@ NOTABLE DETAILS
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 ACTION ITEMS
-→ Review 4 assigned issue(s) in internal-docs — #277, #274, #201, #50
+**Title:** human.tech.AI Discord Bot — Architecture Update & Documentation Gaps [traction:ops]
+
+**Context:**
+• Repo: holonym-foundation/internal-docs | Issue #277 | Opened 7h ago
+• - **GitHub repo:** https://github.com/0xblckmrq/human.tech.AI - **Bot overview:** https://github.com/0xblckmrq/human.tech.AI/blob/main/BOT_OVERVIEW.md A Discord AI support bot that answers community questions about human.tech products using a pre-built knowledge base. Powered by Claude Haiku (Anthropic API). Only answers from its knowledge base — r...
+
+**Current Status:**
+• Open and assigned to you. No recent activity noted in the last 24h.
+
+**Next Steps:**
+• Review the issue and determine if it can be closed, needs a PR, or requires input from teammates.
+• If blocked, leave a comment with the blocker so it's visible to the team.
+
+**Owner:** lebraat, 0xblckmrq
+
+**Impact:** Directly affects what external users and developers see.
+
+────────────────────────────────────────
+**Title:** human.tech.AI Discord Bot — Documentation Status & Next Steps [traction:ops]
+
+**Context:**
+• Repo: holonym-foundation/internal-docs | Issue #274 | Opened 9h ago
+• - **GitHub repo:** https://github.com/0xblckmrq/human.tech.AI - **Bot overview:** https://github.com/0xblckmrq/human.tech.AI/blob/main/BOT_OVERVIEW.md A Discord AI support bot that answers community questions using a curated knowledge base of human.tech docs, website crawls, and Twitter/X content. It uses Claude Haiku (Anthropic API) and only answe...
+
+**Current Status:**
+• Open and assigned to you. No recent activity noted in the last 24h.
+
+**Next Steps:**
+• Review the issue and determine if it can be closed, needs a PR, or requires input from teammates.
+• If blocked, leave a comment with the blocker so it's visible to the team.
+
+**Owner:** lebraat, 0xblckmrq
+
+**Impact:** Directly affects what external users and developers see.
+
+────────────────────────────────────────
+**Title:** Docs Migration to Nextra (Vercel) — Status & Next Steps [traction:content]
+
+**Context:**
+• Repo: holonym-foundation/internal-docs | Issue #201 | Opened 2d ago
+• We have completed the migration of all public documentation into a single Nextra site and deployed it on Vercel. - **Live preview:** https://human-tech-docs.vercel.app/ - **GitHub repo:** https://github.com/0xblckmrq/human.tech.docs - Passport repository successfully migrated into the new documentation site - All content from docs.human.tech and do...
+
+**Current Status:**
+• Open and assigned to you. No recent activity noted in the last 24h.
+
+**Next Steps:**
+• Review the issue and determine if it can be closed, needs a PR, or requires input from teammates.
+• If blocked, leave a comment with the blocker so it's visible to the team.
+
+**Owner:** lebraat, itsleviosa, 0xblckmrq, citizenkaro, mikesletters
+
+**Impact:** Directly affects what external users and developers see.
+
+────────────────────────────────────────
+**Title:** Traction team roles and GTM ownership [traction:gtm]
+
+**Context:**
+• Repo: holonym-foundation/internal-docs | Issue #50 | Opened 7d ago
+• WaaP PMF is the #1 priority. We are small and underfunded vs. Coinbase / Privy / Dynamic. We compete on **depth in 2-3 wedges** (agent frameworks, Sui ecosystem, recipes), not surface area. - **Aztec bridge** frozen until July (alpha mainnet stability fixes) - **Passport** dormant except passport-for-agents (treated as WaaP GTM — unique humanity is...
+
+**Current Status:**
+• Open and assigned to you. No recent activity noted in the last 24h.
+
+**Next Steps:**
+• Review the issue and determine if it can be closed, needs a PR, or requires input from teammates.
+• If blocked, leave a comment with the blocker so it's visible to the team.
+
+**Owner:** hebbianloop, lebraat, 0xblckmrq, holosoe, citizenkaro, Murghhh
+
+**Impact:** Affects go-to-market execution and team ownership clarity.
+
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 QUICK TAKE
-human.tech.AI had a big day — major architecture merged and deployed to Render. Doc cleanup is progressing steadily (6 commits). You have 4 assigned internal-docs issues to keep an eye on.
+human.tech.AI had a major day — architecture merged and deployed to Render. Doc cleanup is moving (6 commits in docs.human.tech). 4 assigned internal-docs issues need your attention.
