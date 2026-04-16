@@ -1,5 +1,7 @@
 📊 DEV UPDATE — April 16, 2026
-Generated: 20:50 UTC
+Generated: 21:04 UTC
+
+TL;DR: 18 commits across 2 repo(s) · human.tech.AI: major feature push live on Render · docs.human.tech: 6 of your commits (link/typo sprint) · 4 issues assigned to you in internal-docs
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 HEADLINE
@@ -33,7 +35,7 @@ NOTABLE DETAILS
 ACTION ITEMS
 Issue #277 — human.tech.AI Discord Bot — Architecture Update & Documentation Gaps [traction:ops]
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/277
-Opened 7h ago | Last updated 7h ago | 0 comment(s) | Owners: lebraat, 0xblckmrq
+Opened 8h ago | Last updated 8h ago | 0 comment(s) | Owners: lebraat, 0xblckmrq
 
 What needs to happen:
   - [ ] Add scrape.js to the repo (missing from git tree — critical)
@@ -76,7 +78,7 @@ Open items:
 ────────────────────────────────────────
 Issue #201 — Docs Migration to Nextra (Vercel) — Status & Next Steps [traction:content]
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/201
-Opened 2d ago | Last updated 5h ago | 7 comment(s) | Owners: lebraat, itsleviosa, 0xblckmrq, citizenkaro, mikesletters
+Opened 2d ago | Last updated 6h ago | 7 comment(s) | Owners: lebraat, itsleviosa, 0xblckmrq, citizenkaro, mikesletters
 
 What needs to happen:
   - [x] Update and fix missing or broken hyperlinks
