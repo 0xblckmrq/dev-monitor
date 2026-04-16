@@ -1,5 +1,5 @@
 📊 DEV UPDATE — April 16, 2026
-Generated: 20:36 UTC
+Generated: 20:45 UTC
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 HEADLINE
@@ -32,73 +32,231 @@ NOTABLE DETAILS
 ━━━━━━━━━━━━━━━━━━━━━━━━
 ACTION ITEMS
 **Title:** human.tech.AI Discord Bot — Architecture Update & Documentation Gaps [traction:ops]
+https://github.com/holonym-foundation/internal-docs/issues/277
 
 **Context:**
-• Repo: holonym-foundation/internal-docs | Issue #277 | Opened 7h ago
-• - **GitHub repo:** https://github.com/0xblckmrq/human.tech.AI - **Bot overview:** https://github.com/0xblckmrq/human.tech.AI/blob/main/BOT_OVERVIEW.md A Discord AI support bot that answers community questions about human.tech products using a pre-built knowledge base. Powered by Claude Haiku (Anthropic API). Only answers from its knowledge base — r...
+• Repo: holonym-foundation/internal-docs | Issue #277 | Opened 7h ago | Last updated 7h ago | 0 comment(s)
+• Owners: lebraat, 0xblckmrq
+
+  ## Links
+
+  - **GitHub repo:** https://github.com/0xblckmrq/human.tech.AI
+  - **Bot overview:** https://github.com/0xblckmrq/human.tech.AI/blob/main/BOT_OVERVIEW.md
+
+  ## What It Is
+
+  A Discord AI support bot that answers community questions about human.tech products using a pre-built knowledge base. Powered by Claude Haiku (Anthropic API). Only answers from its knowledge base — redirects to a support ticket channel when it cannot answer.
+
+  Supports both passive message-based responses and active /ask slash commands.
+
+  ---
+
+  ## Architecture (updated April 16, 2026)
+
+  Scraping and serving are fully separated:
+
+  ```
+  scrape.js → kb.json → bot.js
+  ```
+
+  - **scrape.js** — standalone scraper: crawls websites, fetches Twitter/Nitter RSS, reads local docs, writes to kb.json. Incremental mode via content hashing. Puppeteer fallback for JS-rendered pages.
+  - **bot.js** — loads kb.json on startup. Never scrapes. Answers from pre-built KB only.
+  - **kb.json** — structured KB file per source: URL, type, content, word count, hash, timestamps.
+
+  ---
+
+  ## Current State
+
+  - [x] Scrape-once, serve-forever architecture
+  - [x] Slash commands: /ask, /help
+  - [x] Feedback buttons on every answer (👍/👎 logged to logs/feedback.jsonl)
+  - [x] Multi-language responses
+  - [x] Auto-FAQ detection (admin alert when 5+ users ask the same unanswered question)
+  - [x] Smart follow-up escalation (pings MOD_ROLE_ID after 2 consecutive NO_ANSWERs)
+  - [x] Daily digest (questions, NO_ANSWER rate, cost, top unanswered topics)
+  - [x] Staleness warning on startup if kb.json is >7 days old
+  - [x] PDF ingestion via !kb-pdf
+  - [x] Content sanitization — 19 prompt injection patterns stripped (sanitize.js)
+  - [x] Per-user rate limiting (5 AI calls / 5 min)
+  - [x] Persistent interaction logging (logs/interactions.jsonl)
+  - [x] FAQs: faq-core.md, faq-covenant.md, faq-waap-1.md, faq-waap-2.md, public-overview.md
+
+  ---
+
+  ## Known Gaps
+
+  | Issue | Impact | Workaround |
+  |---|---|---|
+  
+  [... truncated — see issue for full content]
 
 **Current Status:**
-• Open and assigned to you. No recent activity noted in the last 24h.
+• Open and assigned to you. Last updated 7h ago.
 
 **Next Steps:**
-• Review the issue and determine if it can be closed, needs a PR, or requires input from teammates.
-• If blocked, leave a comment with the blocker so it's visible to the team.
-
-**Owner:** lebraat, 0xblckmrq
+• Review and comment, close, or open a PR as appropriate.
+• If blocked, leave a comment so it's visible to the team.
 
 **Impact:** Directly affects what external users and developers see.
 
 ────────────────────────────────────────
 **Title:** human.tech.AI Discord Bot — Documentation Status & Next Steps [traction:ops]
+https://github.com/holonym-foundation/internal-docs/issues/274
 
 **Context:**
-• Repo: holonym-foundation/internal-docs | Issue #274 | Opened 9h ago
-• - **GitHub repo:** https://github.com/0xblckmrq/human.tech.AI - **Bot overview:** https://github.com/0xblckmrq/human.tech.AI/blob/main/BOT_OVERVIEW.md A Discord AI support bot that answers community questions using a curated knowledge base of human.tech docs, website crawls, and Twitter/X content. It uses Claude Haiku (Anthropic API) and only answe...
+• Repo: holonym-foundation/internal-docs | Issue #274 | Opened 9h ago | Last updated 9h ago | 0 comment(s)
+• Owners: lebraat, 0xblckmrq
+
+  ## Links
+
+  - **GitHub repo:** https://github.com/0xblckmrq/human.tech.AI
+  - **Bot overview:** https://github.com/0xblckmrq/human.tech.AI/blob/main/BOT_OVERVIEW.md
+
+  ## What It Is
+
+  A Discord AI support bot that answers community questions using a curated knowledge base of human.tech docs, website crawls, and Twitter/X content. It uses Claude Haiku (Anthropic API) and only answers from what it has been given — redirecting to a support ticket channel when it cannot answer.
+
+  **Knowledge sources (243 total):**
+  - Local `docs/` folder — FAQs, product overviews
+  - Website crawls — `passport.human.tech`, `docs.passport.xyz`, `human.tech` (refreshed every 6h)
+  - Twitter/X via Nitter RSS — `@humntech`, `@humnpassport`, `@waapxyz` (refreshed hourly)
+
+  ## Current State
+
+  - [x] Core bot functional — filtering, relevance scoring, Claude Haiku responses, ticket redirects
+  - [x] Security hardening complete — content sanitization (`sanitize.js`), per-user rate limiting (5 calls / 5 min), persistent interaction logging, source attribution
+  - [x] `package-lock.json` added for reproducible builds
+  - [x] FAQs authored: `faq-core.md`, `faq-covenant.md`, `faq-waap-1.md`, `faq-waap-2.md`, `public-overview.md`
+
+  ## Known Gaps
+
+  | Issue | Impact | Workaround |
+  |-------|--------|------------|
+  | `@waapxyz` Nitter down (all 8 instances failing) | WaaP Twitter content not refreshing | Paste tweets manually into `docs/twitter-waapxyz.md` |
+  | `docs.passport.xyz` partial (50 of 103 pages scraped) | Incomplete Passport knowledge base | Raise `MAX_PAGES_PER_SITE=100` in `.env` |
+  | `human.tech` blog subpages JS-rendered (20 words per page) | Blog content unavailable to bot | Add key blog posts manually to `docs/` |
+  | Roadmap FAQ answer is outdated — states "no official roadmap released" | Bot misinforms users | Update `faq-core.md` roadmap entry |
+  | No deployment or hosting documentation | Unclear where/how bot is running in production | Write ops rundown |
+
+  ## Next St
+  [... truncated — see issue for full content]
 
 **Current Status:**
-• Open and assigned to you. No recent activity noted in the last 24h.
+• Open and assigned to you. Last updated 9h ago.
 
 **Next Steps:**
-• Review the issue and determine if it can be closed, needs a PR, or requires input from teammates.
-• If blocked, leave a comment with the blocker so it's visible to the team.
-
-**Owner:** lebraat, 0xblckmrq
+• Review and comment, close, or open a PR as appropriate.
+• If blocked, leave a comment so it's visible to the team.
 
 **Impact:** Directly affects what external users and developers see.
 
 ────────────────────────────────────────
 **Title:** Docs Migration to Nextra (Vercel) — Status & Next Steps [traction:content]
+https://github.com/holonym-foundation/internal-docs/issues/201
 
 **Context:**
-• Repo: holonym-foundation/internal-docs | Issue #201 | Opened 2d ago
-• We have completed the migration of all public documentation into a single Nextra site and deployed it on Vercel. - **Live preview:** https://human-tech-docs.vercel.app/ - **GitHub repo:** https://github.com/0xblckmrq/human.tech.docs - Passport repository successfully migrated into the new documentation site - All content from docs.human.tech and do...
+• Repo: holonym-foundation/internal-docs | Issue #201 | Opened 2d ago | Last updated 5h ago | 7 comment(s)
+• Owners: lebraat, itsleviosa, 0xblckmrq, citizenkaro, mikesletters
+
+  We have completed the migration of all public documentation into a single Nextra site and deployed it on Vercel.
+
+  ## Links
+
+  - **Live preview:** https://human-tech-docs.vercel.app/
+  - **GitHub repo:** https://github.com/0xblckmrq/human.tech.docs
+
+  ## Current State
+
+  - Passport repository successfully migrated into the new documentation site
+  - All content from docs.human.tech and docs.passport.xyz consolidated into one site
+  - Site deployed and live on Vercel
+  - Initial fonts applied based on brand assets
+
+  ## Next Steps
+
+  - [x] Update and fix missing or broken hyperlinks
+  - [ ] Make minor styling adjustments
+  - [ ] Refine fonts if needed
+
+  ## Upcoming Work
+
+  - [x] Migrate https://support.passport.xyz/passport-knowledge-base
+  - [ ] Add FAQs for Human ID
+  - [ ] Add FAQs for WaaP
+  - [ ] Expand Bridge documentation
+
+  ## Goal
+
+  Track final polish, content additions, and readiness for moving to the main domain or replacing docs.human.tech.
+
+  ## Notes
+
+  This task represents the post-migration cleanup and expansion phase before full production rollout.
 
 **Current Status:**
-• Open and assigned to you. No recent activity noted in the last 24h.
+• Open and assigned to you. Last updated 5h ago.
 
 **Next Steps:**
-• Review the issue and determine if it can be closed, needs a PR, or requires input from teammates.
-• If blocked, leave a comment with the blocker so it's visible to the team.
-
-**Owner:** lebraat, itsleviosa, 0xblckmrq, citizenkaro, mikesletters
+• Review and comment, close, or open a PR as appropriate.
+• If blocked, leave a comment so it's visible to the team.
 
 **Impact:** Directly affects what external users and developers see.
 
 ────────────────────────────────────────
 **Title:** Traction team roles and GTM ownership [traction:gtm]
+https://github.com/holonym-foundation/internal-docs/issues/50
 
 **Context:**
-• Repo: holonym-foundation/internal-docs | Issue #50 | Opened 7d ago
-• WaaP PMF is the #1 priority. We are small and underfunded vs. Coinbase / Privy / Dynamic. We compete on **depth in 2-3 wedges** (agent frameworks, Sui ecosystem, recipes), not surface area. - **Aztec bridge** frozen until July (alpha mainnet stability fixes) - **Passport** dormant except passport-for-agents (treated as WaaP GTM — unique humanity is...
+• Repo: holonym-foundation/internal-docs | Issue #50 | Opened 7d ago | Last updated 2d ago | 5 comment(s)
+• Owners: hebbianloop, lebraat, 0xblckmrq, holosoe, citizenkaro, Murghhh
+
+  ## Context
+
+  WaaP PMF is the #1 priority. We are small and underfunded vs. Coinbase / Privy / Dynamic. We compete on **depth in 2-3 wedges** (agent frameworks, Sui ecosystem, recipes), not surface area.
+
+  - **Aztec bridge** frozen until July (alpha mainnet stability fixes)
+  - **Passport** dormant except passport-for-agents (treated as WaaP GTM — unique humanity is the moat vs Coinbase Agent Wallet)
+  - **Paid acquisition** out of scope — organic + BD + recipes only
+  - **Korean market** deprioritized — weak AI agent signal, unclear fit for WaaP for agents
+
+  ## Proposed Roles
+
+  ### @hebbianloop — BD & PMF Discovery
+  - Owns partner and user conversations that drive PMF signal
+  - Should not be diluted with execution work
+  - Unblocks the team by making role/scope decisions quickly
+
+  ### @lebraat — WaaP for Agents GTM Lead + Product-Adjacent Launches
+  - Lead GTM for **WaaP for agents** (CLI, recipe-driven motion, agentic wallet positioning)
+  - **Own agent framework partnerships** as a named workstream (Anthropic connector, OpenClaw, etc.)
+  - Own product-proximate launches (Sui, Squid Mode, recipes)
+  - Flex into BD where needed
+  - Complete Passport product requirements
+
+  ### @citizenkaro — WaaP for Apps PMM Lead (90% WaaP)
+  - **90% on WaaP for apps** product marketing
+  - Park Aztec once docs are in GitHub; Passport fully cold
+  - Co-own positioning vs. Privy / Dynamic / Coinbase
+  - Partner with Daniel on cross-WaaP messaging strategy
+
+  ### @arunsajeev17 — Content Engine + Select GTM Ownership
+  - Build and run the content engine
+  - Own Stellar and Squid Mode GTMs end-to-end
+  - Coordinate with Karo and Daniel on content briefs tied to each launch
+
+  ### @Murghhh — Metrics Program + Partner Marketing + Select GTMs
+  - **Stand up metrics program immediately (week one priority)** — without it, no GTM has a feedback loop
+  - Own partner marketing motion
+  - Own delegated humanity / passport-for-agents campaign with Karo
+  - Flex into marketing execution 
+  [... truncated — see issue for full content]
 
 **Current Status:**
-• Open and assigned to you. No recent activity noted in the last 24h.
+• Open and assigned to you. Last updated 2d ago.
 
 **Next Steps:**
-• Review the issue and determine if it can be closed, needs a PR, or requires input from teammates.
-• If blocked, leave a comment with the blocker so it's visible to the team.
-
-**Owner:** hebbianloop, lebraat, 0xblckmrq, holosoe, citizenkaro, Murghhh
+• Review and comment, close, or open a PR as appropriate.
+• If blocked, leave a comment so it's visible to the team.
 
 **Impact:** Affects go-to-market execution and team ownership clarity.
 
