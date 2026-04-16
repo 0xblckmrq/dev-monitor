@@ -1,14 +1,21 @@
 📊 DAILY DEV REPORT — 2026-04-16 UTC
-Generated: 17:56 UTC
+Generated: 18:01 UTC
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
 📁 docs.human.tech (holonym-foundation)
-Open Issues: ?  |  Open PRs: 0  |  Commits (24h): 0
-  (unavailable — private repo or API limit)
+Open Issues: 0  |  Open PRs: 0  |  Commits (24h): 8
+  9847a3f [0xblckmrq] Fix embed getting-access hyperlinks to absolute paths
+  46d6329 [0xblckmrq] Fix 31 typos across 9 documentation files
+  5cd33ff [Caleb Tuttle] Merge pull request #1 from holonym-foundation/caleb/deployment-workflow
+  b1993d3 [Caleb Tuttle] add deployment workflow
+  3e93c06 [0xblckmrq] Convert all relative links and redirects to absolute paths
+  84bc779 [0xblckmrq] Fix relative links in index pages resolving to wrong paths
+  bb8ee27 [0xblckmrq] Fix broken external links across documentation
+  d982a08 [0xblckmrq] Fix broken redirect paths in index.mdx files
 PRs: (none)
 Branches:
-  (none)
+  caleb/deployment-workflow — last commit 5h ago
 
 📁 human.tech.AI (0xblckmrq)
 Open Issues: 0  |  Open PRs: 0  |  Commits (24h): 12
@@ -42,12 +49,123 @@ Branches:
   staging — last commit 8d ago
 
 📁 internal-docs (holonym-foundation)
-Open Issues: ?  |  Open PRs: 0  |  Commits (24h): 0
-  (unavailable — private repo or API limit)
-PRs: (none)
+Open Issues: 169  |  Open PRs: 20  |  Commits (24h): 11
+  fd03662 [S El Damaty] Merge pull request #262 from holonym-foundation/shady/karon-matrix-issue-sync-docs
+  9ce3f47 [S El Damaty] Add c2-commands skill — agent-discoverable guide to Karon interactions
+  698987a [S El Damaty] Clarify borg-gh skill scope — not for Karon or Matrix agents
+  33c1389 [S El Damaty] Add Matrix handles to team roster
+  2810f09 [S El Damaty] Update team roster — correct Mike role description
+  7347b62 [S El Damaty] docs(karon): register matrix-issue-sync skill + channels.yaml note
+  0772bd8 [human-dot-bot[bot]] Add PRD template and register in kb CLI (#230)
+  8088d54 [Daniel | human.tech] Add team-agents.md -- intel digests now on Matrix feed-intel (#252)
+  b8ca134 [S El Damaty] Add company/team.md (#52)
+  1bc7ee0 [Karon (AI)] docs(karon): Token optimization strategy and implementation plan
+  629be59 [Karon (AI)] chore(karon): Add trimmed COO context for token efficiency
+PRs:
+  #276 COO + AI-Native Operations Research: Initial Framework & Sprint Setup — unassigned, opened 5h ago
+  #273 Content publishing automation — design — unassigned, opened 7h ago
+  #264 Sales enablement materials + markdown-to-PDF pipeline [DRAFT] — unassigned, opened 17h ago
+  #263 Add Custom Policy Engine PRD — PWS webhook architecture — unassigned, opened 18h ago
+  #257 docs(passport): refresh stats — 2.3M+ accounts, 44M+ credentials — unassigned, opened 20h ago
+  #256 Add invoicing SOP — unassigned, opened 21h ago
+  #248 docs(infra): c2.human.tech security audit + karon infra awareness — unassigned, opened 23h ago
+  #231 Add IPM agenda template — unassigned, opened 1d ago
+  #225 GTM: elizaOS plugin launch copy — unassigned, opened 1d ago
+  #223 PRD: CLI Scaffolding Tool (create-waap-agent) — lebraat, opened 1d ago
+  #221 feat(aztec-bridge): Aztec BD enablement GTM — unassigned, opened 1d ago
+  #144 Update Turnkey competitor doc: Sui agent positioning — lebraat, opened 2d ago
+  #143 Deck: AI-native ops — source and slides — unassigned, opened 2d ago
+  #140 G2M team onboarding — deck, skills, and workflow conventions — unassigned, opened 2d ago
+  #111 CRM Neon Postgres migration — schema, docs, infrastructure [DRAFT] — unassigned, opened 2d ago
+  #93 Set up git-annex with Hetzner Object Storage for binary asset management — unassigned, opened 2d ago
+  #70 Add Stellar / Relay ID GTM (draft) [DRAFT] — lebraat, opened 3d ago
+  #68 Add Squid Mode GTM — campaign brief, angles, launch schedule, BD leads [DRAFT] — lebraat, opened 3d ago
+  #48 Add agent framework partnerships plan — lebraat, opened 7d ago
+  #9 agent fee PRD [DRAFT] — nanaknihal, opened 20d ago
 Branches:
-  (none)
+  add-devrel-hackathon-retro — last commit 16d ago
+  add-known-issues-sop — last commit 6d ago
+  add-sponge-competitor-clean — last commit 16d ago
+  add-triage-skill — last commit 15d ago
+  agent-framework-partnerships — last commit 3d ago
+  agentic-waap-gtm — last commit 21d ago
+  analysis/seo-geo-review — last commit 13d ago
+  anmol/content-publishing-automation — last commit 7h ago
+  arun/add-setup-and-roster — last commit 6d ago
+  arun/squid-mode-gtm — last commit 3d ago
+  arun/stellar-relay-id-gtm — last commit 3d ago
+  chore/passport-stats-refresh — last commit 20h ago
+  data-science-transition-prd — last commit 17d ago
+  docs/ai-setup — last commit 13d ago
+  docs/ai-setup-and-crm-automation — last commit 13d ago
+  docs/crm-automation — last commit 14d ago
+  docs/crm-combined — last commit 2d ago
+  docs/crm-launch-announcement — last commit 3d ago
+  docs/crm-neon-infrastructure — last commit 3d ago
+  docs/crm-neon-migration — last commit 4d ago
+  docs/ftc-hackathon-results — last commit 5d ago
+  docs/github-task-management — last commit 1d ago
+  docs/intel-agents-matrix — last commit 22h ago
+  docs/latam-buildathon-audit — last commit 1d ago
+  docs/product-icps — last commit 3d ago
+  docs/team-intel-agents — last commit 2d ago
+  docs/update-ai-infrastructure — last commit 6d ago
+  docs/waap-roadmap-update — last commit 2d ago
+  event-bd-runbook — last commit 14d ago
+  feat/dm-config — last commit 6d ago
+  fix/ia-cleanup-top-level — last commit 16d ago
+  fix/scope-github-queries-to-internal-docs — last commit 1d ago
+  fix/strategy-updates-april-2026 — last commit 1d ago
+  fix/sui-launch-date-apr23 — last commit 2d ago
+  fix/update-label-taxonomy-to-namespaced — last commit 1d ago
+  git-annex — last commit 2d ago
+  github-native-workflow — last commit 6d ago
+  gtm/elizaos-plugin-launch — last commit 1d ago
+  gtm/sui-launch-plan — last commit 2d ago
+  human-bridge-to-aztec — last commit 1d ago
+  karo/aztec-bd-enablement-gtm — last commit 1d ago
+  karon/coo-ai-native-ops-research — last commit 5h ago
+  notion-migration-round-2 — last commit 29d ago
+  ops/pr-conventions — last commit 1d ago
+  organize-product-docs — last commit 16d ago
+  passport/nfc-pricing-tiers — last commit 16d ago
+  passport-competitor-research — last commit 8d ago
+  passport-individual-zk-verifications-spec — last commit 6d ago
+  prd/cli-scaffolding — last commit 1d ago
+  prd-agent-tx-fees-rev-sharing — last commit 1d ago
+  prd-custom-policy-engine — last commit 18h ago
+  prd-gas-tank — last commit 1d ago
+  privy-migration-content — last commit 22d ago
+  recipe/morpho-yield-optimizer — last commit 14d ago
+  recipe-backlog — last commit 14d ago
+  recipe-starter-system — last commit 14d ago
+  research/agentaos-competitive — last commit 22d ago
+  review-passport-spec — last commit 28d ago
+  sales-enablement-materials — last commit 17h ago
+  security-certifications-guide — last commit 16d ago
+  shady/agents-karon — last commit 2d ago
+  shady/ai-native-ops-deck — last commit 23h ago
+  shady/c2-security-audit — last commit 20h ago
+  shady/g2m-team-onboarding — last commit 2d ago
+  shady/git-annex-setup — last commit 1d ago
+  shady/karon-matrix-issue-sync-docs — last commit 19h ago
+  skill/repo-wiki-guidance — last commit 1d ago
+  sop/invoicing — last commit 21h ago
+  synced/git-annex — last commit 2d ago
+  task-tracking-initial — last commit 21d ago
+  test/onboarding-pr — last commit 7d ago
+  triage/ipm-agenda-template — last commit 1d ago
+  triage/prd-template — last commit 21h ago
+  update/turnkey-sui-positioning — last commit 2d ago
+  waap/transaction-security-vendor-assessment — last commit 15d ago
+  waap-product-roadmap — last commit 15d ago
+  waap-use-case-framework — last commit 21d ago
+  waap-use-case-framework-v2 — last commit 21d ago
+  walletcon-2026-deck — last commit 19d ago
+  walletcon-2026-pr-briefs — last commit 17d ago
+  wiki-skill — last commit 2d ago
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 ⚠️  RISKS
-  • No commits in 24h: docs.human.tech, human.tech.bot, internal-docs — expected?
+  • internal-docs: 20 open PRs — review backlog.
+  • No commits in 24h: human.tech.bot — expected?
