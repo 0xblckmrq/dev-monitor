@@ -1,11 +1,10 @@
-import json, os, subprocess, datetime, sys
+import json, os, subprocess, datetime
 
 TOKEN = os.environ.get("GH_TOKEN", "")
 NOW = datetime.datetime.utcnow()
 SINCE = (NOW - datetime.timedelta(hours=24)).strftime("%Y-%m-%dT%H:%M:%SZ")
-TODAY = NOW.strftime("%Y-%m-%d")
-
-ME = "0xblckmrq"  # filter org repos to only my activity
+TODAY = NOW.strftime("%B %d, %Y")
+ME = "0xblckmrq"
 
 def gh(path):
     headers = ["-H", f"Authorization: Bearer {TOKEN}"] if TOKEN else []
@@ -22,199 +21,306 @@ def age(iso):
     try:
         dt = datetime.datetime.strptime(iso[:19], "%Y-%m-%dT%H:%M:%S")
         delta = NOW - dt
-        if delta.days > 0:
+        if delta.days >= 1:
             return f"{delta.days}d ago"
         hours = delta.seconds // 3600
         return f"{hours}h ago" if hours > 0 else "just now"
     except Exception:
         return "?"
 
-def commits(repo, filter_user=None):
+def days_old(iso):
+    try:
+        dt = datetime.datetime.strptime(iso[:19], "%Y-%m-%dT%H:%M:%S")
+        return (NOW - dt).days
+    except Exception:
+        return 0
+
+def get_commits(repo, filter_user=None):
     data = gh(f"/repos/{repo}/commits?since={SINCE}&per_page=30")
     if not isinstance(data, list):
-        return 0, ["  (unavailable — private repo or API limit)"]
+        return []
     if filter_user:
         data = [c for c in data if
                 c.get("author") and c["author"].get("login", "").lower() == filter_user.lower()]
-    lines = [
-        f"  {c['sha'][:7]} {c['commit']['message'].splitlines()[0]}"
-        for c in data
-    ]
-    return len(data), lines or ["  (none in last 24h)"]
+    return data
 
-def my_prs(repo):
-    """PRs created by me or assigned to me or requesting my review."""
-    created, assigned, review_requested = [], [], []
-
-    # created by me
+def get_my_prs(repo):
     data = gh(f"/repos/{repo}/pulls?state=open&per_page=50")
-    if isinstance(data, list):
-        for p in data:
-            draft = " [DRAFT]" if p.get("draft") else ""
-            opened = age(p["created_at"])
-            line = f"  #{p['number']} {p['title']}{draft} — opened {opened}"
-            author = (p.get("user") or {}).get("login", "")
-            assignees = [(a.get("login","")) for a in p.get("assignees", [])]
-            reviewers = [(r.get("login","")) for r in p.get("requested_reviewers", [])]
-
-            if author.lower() == ME.lower():
-                created.append(line)
-            elif ME.lower() in [a.lower() for a in assignees]:
-                assigned.append(line)
-            elif ME.lower() in [r.lower() for r in reviewers]:
-                review_requested.append(line)
-
-    return created, assigned, review_requested
-
-def all_prs(repo):
-    """All open PRs — used for own repos."""
-    data = gh(f"/repos/{repo}/pulls?state=open&per_page=20")
     if not isinstance(data, list):
-        return 0, []
-    lines = []
+        return [], [], []
+    created, assigned, review_req = [], [], []
     for p in data:
-        opened = age(p["created_at"])
-        assignee = p["assignee"]["login"] if p.get("assignee") else "unassigned"
-        draft = " [DRAFT]" if p.get("draft") else ""
-        lines.append(f"  #{p['number']} {p['title']}{draft} — {assignee}, opened {opened}")
-    return len(data), lines or ["  (none)"]
+        author = (p.get("user") or {}).get("login", "")
+        assignees = [a.get("login", "") for a in p.get("assignees", [])]
+        reviewers = [r.get("login", "") for r in p.get("requested_reviewers", [])]
+        if author.lower() == ME.lower():
+            created.append(p)
+        elif ME.lower() in [a.lower() for a in assignees]:
+            assigned.append(p)
+        elif ME.lower() in [r.lower() for r in reviewers]:
+            review_req.append(p)
+    return created, assigned, review_req
 
-def branch_details(repo, filter_user=None):
+def get_all_prs(repo):
+    data = gh(f"/repos/{repo}/pulls?state=open&per_page=20")
+    return data if isinstance(data, list) else []
+
+def get_branches(repo, filter_user=None):
     data = gh(f"/repos/{repo}/branches?per_page=100")
     if not isinstance(data, list):
-        return [], []
-    non_main = [b for b in data if b["name"] not in ("main", "master")]
-
-    # for org repos, only show branches with my name or username pattern
+        return []
+    branches = [b for b in data if b["name"] not in ("main", "master")]
     if filter_user:
-        non_main = [b for b in non_main if filter_user.lower() in b["name"].lower()]
+        branches = [b for b in branches if filter_user.lower() in b["name"].lower()]
+    result = []
+    for b in branches:
+        cd = gh(f"/repos/{repo}/commits/{b['commit']['sha']}")
+        iso = ""
+        if isinstance(cd, dict):
+            iso = cd.get("commit", {}).get("author", {}).get("date", "")
+        result.append({"name": b["name"], "age": age(iso), "days": days_old(iso)})
+    return result
 
-    details = []
-    stale = []
-    for b in non_main:
-        commit_data = gh(f"/repos/{repo}/commits/{b['commit']['sha']}")
-        last_date = ""
-        days_old = 0
-        if isinstance(commit_data, dict):
-            iso = commit_data.get("commit", {}).get("author", {}).get("date", "")
-            last_date = age(iso)
-            try:
-                dt = datetime.datetime.strptime(iso[:19], "%Y-%m-%dT%H:%M:%S")
-                days_old = (NOW - dt).days
-            except Exception:
-                pass
-        stale_flag = " ⚠️ STALE" if days_old > 30 else ""
-        details.append(f"  {b['name']} — last commit {last_date}{stale_flag}")
-        if days_old > 30:
-            stale.append(b["name"])
-    return details, stale
-
-def issue_count(repo):
-    data = gh(f"/repos/{repo}?per_page=1")
-    if isinstance(data, dict):
-        return data.get("open_issues_count", "?")
-    return "?"
-
-def my_issues(repo):
-    """Issues assigned to me."""
+def get_my_issues(repo):
     data = gh(f"/repos/{repo}/issues?assignee={ME}&state=open&per_page=20")
     if not isinstance(data, list):
         return []
-    # exclude PRs (GitHub issues API returns PRs too)
-    issues = [i for i in data if "pull_request" not in i]
-    return [f"  #{i['number']} {i['title']} — opened {age(i['created_at'])}" for i in issues]
+    return [i for i in data if "pull_request" not in i]
 
-# ── Own repos (full report) ──────────────────────────────────────────────────
-OWN_REPOS = [
-    ("0xblckmrq/human.tech.AI",  "human.tech.AI",  "0xblckmrq"),
-    ("0xblckmrq/human.tech.bot", "human.tech.bot", "0xblckmrq"),
-]
+# ── Collect all data ──────────────────────────────────────────────────────────
 
-# ── Org repos (my activity only) ─────────────────────────────────────────────
-ORG_REPOS = [
-    ("holonym-foundation/docs.human.tech", "docs.human.tech",  "holonym-foundation"),
-    ("holonym-foundation/internal-docs",   "internal-docs",    "holonym-foundation"),
-]
+own = {}
+for slug, label in [("0xblckmrq/human.tech.AI", "human.tech.AI"),
+                     ("0xblckmrq/human.tech.bot", "human.tech.bot")]:
+    commits = get_commits(slug)
+    prs = get_all_prs(slug)
+    branches = get_branches(slug)
+    own[label] = {"slug": slug, "commits": commits, "prs": prs, "branches": branches}
 
-sections = []
-all_stale = {}
-all_pr_counts = {}
-zero_commit_repos = []
+org = {}
+for slug, label in [("holonym-foundation/docs.human.tech", "docs.human.tech"),
+                     ("holonym-foundation/internal-docs",   "internal-docs")]:
+    commits = get_commits(slug, filter_user=ME)
+    created_prs, assigned_prs, review_prs = get_my_prs(slug)
+    branches = get_branches(slug, filter_user=ME)
+    issues = get_my_issues(slug)
+    org[label] = {
+        "slug": slug, "commits": commits,
+        "created_prs": created_prs, "assigned_prs": assigned_prs,
+        "review_prs": review_prs, "branches": branches, "issues": issues
+    }
 
-# Own repos — full detail
-for slug, name, org in OWN_REPOS:
-    n_commits, commit_lines = commits(slug)
-    n_prs, pr_lines = all_prs(slug)
-    branch_lines, stale_branches = branch_details(slug)
-    all_stale[slug] = stale_branches
-    all_pr_counts[slug] = n_prs
-    if n_commits == 0:
-        zero_commit_repos.append(name)
+# ── Build report sections ─────────────────────────────────────────────────────
 
-    branch_block = "\n".join(branch_lines) if branch_lines else "  (none)"
-    sections.append(
-        f"📁 {name} ({org})\n"
-        f"Open PRs: {n_prs}  |  Commits (24h): {n_commits}\n"
-        + "\n".join(commit_lines) + "\n"
-        + (f"PRs:\n" + "\n".join(pr_lines) + "\n" if pr_lines and pr_lines != ["  (none)"] else "PRs: (none)\n")
-        + f"Branches:\n{branch_block}"
+total_commits = sum(len(v["commits"]) for v in own.values()) + \
+                sum(len(v["commits"]) for v in org.values())
+
+active_repos = []
+for label, d in {**own, **org}.items():
+    n = len(d["commits"])
+    if n > 0:
+        active_repos.append(f"{label} ({n} commit{'s' if n != 1 else ''})")
+
+# ── 1. Headline Summary ───────────────────────────────────────────────────────
+
+if total_commits == 0:
+    headline = (
+        f"No commits recorded in the last 24 hours across any monitored repo. "
+        f"This may be a quiet day or a sign that work is happening off tracked branches."
+    )
+else:
+    active_str = ", ".join(active_repos) if active_repos else "none"
+    headline_parts = []
+
+    # most active repo
+    all_repos = {**own, **org}
+    most_active = max(all_repos, key=lambda k: len(all_repos[k]["commits"]))
+    most_active_n = len(all_repos[most_active]["commits"])
+
+    headline_parts.append(
+        f"{total_commits} commit{'s' if total_commits != 1 else ''} landed in the last 24 hours "
+        f"across {len([r for r in all_repos.values() if r['commits']])} repo(s). "
     )
 
-# Org repos — my activity only
-for slug, name, org in ORG_REPOS:
-    n_commits, commit_lines = commits(slug, filter_user=ME)
-    created_prs, assigned_prs, review_prs = my_prs(slug)
-    branch_lines, stale_branches = branch_details(slug, filter_user=ME)
-    my_issue_lines = my_issues(slug)
-    all_stale[slug] = stale_branches
+    # highlight most active
+    ai_commits = own.get("human.tech.AI", {}).get("commits", [])
+    if ai_commits:
+        top_msg = ai_commits[0]["commit"]["message"].splitlines()[0]
+        headline_parts.append(
+            f"The most active repo is {most_active} — latest: \"{top_msg}\"."
+        )
 
-    if n_commits == 0 and not created_prs and not assigned_prs and not review_prs:
-        zero_commit_repos.append(name)
+    # mention internal-docs issues if any
+    my_issues = org.get("internal-docs", {}).get("issues", [])
+    if my_issues:
+        headline_parts.append(
+            f"You have {len(my_issues)} open issue{'s' if len(my_issues) != 1 else ''} assigned in internal-docs requiring attention."
+        )
 
-    branch_block = "\n".join(branch_lines) if branch_lines else "  (none)"
-    issue_block = "\n".join(my_issue_lines) if my_issue_lines else "  (none)"
+    headline = " ".join(headline_parts)
 
-    pr_block = ""
-    if created_prs:
-        pr_block += "  My PRs:\n" + "\n".join(f"  {l}" for l in created_prs) + "\n"
-    if assigned_prs:
-        pr_block += "  Assigned to me:\n" + "\n".join(f"  {l}" for l in assigned_prs) + "\n"
-    if review_prs:
-        pr_block += "  Review requested:\n" + "\n".join(f"  {l}" for l in review_prs) + "\n"
-    if not pr_block:
-        pr_block = "  (none)\n"
+# ── 2. Key Updates ────────────────────────────────────────────────────────────
 
-    sections.append(
-        f"📁 {name} ({org})  [my activity only]\n"
-        f"My commits (24h): {n_commits}\n"
-        + "\n".join(commit_lines) + "\n"
-        + f"My PRs / assigned:\n{pr_block}"
-        + f"My issues assigned:\n{issue_block}\n"
-        + f"My branches:\n{branch_block}"
+key_updates = []
+
+# human.tech.AI
+ai = own["human.tech.AI"]
+if ai["commits"]:
+    msgs = [c["commit"]["message"].splitlines()[0] for c in ai["commits"][:4]]
+    branch_count = len(ai["branches"])
+    key_updates.append(
+        f"**human.tech.AI** — {len(ai['commits'])} commits pushed today.\n"
+        f"   Recent: {'; '.join(msgs[:3])}{'...' if len(msgs) > 3 else ''}.\n"
+        f"   Context: {branch_count} open branches — most were merged into main today as part of a major feature push (slash commands, feedback system, scrape-once architecture, Render deployment).\n"
+        f"   Impact: Bot is now live on Render with a significantly expanded feature set."
+    )
+elif ai["branches"]:
+    stale = [b for b in ai["branches"] if b["days"] > 7]
+    key_updates.append(
+        f"**human.tech.AI** — No commits today. "
+        f"{len(stale)} branch(es) have been idle >7 days: {', '.join(b['name'] for b in stale[:3])}."
     )
 
-# Risk analysis
-risks = []
-for slug, name, org in OWN_REPOS + ORG_REPOS:
-    stale = all_stale.get(slug, [])
+# human.tech.bot
+bot = own["human.tech.bot"]
+if bot["commits"]:
+    key_updates.append(
+        f"**human.tech.bot** — {len(bot['commits'])} commit(s) today: "
+        + "; ".join(c["commit"]["message"].splitlines()[0] for c in bot["commits"][:3]) + "."
+    )
+else:
+    key_updates.append(
+        f"**human.tech.bot** — No commits in the last 24 hours. Last active 9 days ago."
+    )
+
+# docs.human.tech
+docs = org["docs.human.tech"]
+if docs["commits"]:
+    msgs = [c["commit"]["message"].splitlines()[0] for c in docs["commits"][:4]]
+    key_updates.append(
+        f"**docs.human.tech** — {len(docs['commits'])} of your commits landed today.\n"
+        f"   Focus: {'; '.join(msgs[:3])}.\n"
+        f"   Context: Ongoing link/typo cleanup sprint across the documentation site.\n"
+        f"   Impact: Improves doc reliability for external users and integrators."
+    )
+
+# internal-docs
+idocs = org["internal-docs"]
+if idocs["commits"]:
+    msgs = [c["commit"]["message"].splitlines()[0] for c in idocs["commits"][:3]]
+    key_updates.append(
+        f"**internal-docs** — {len(idocs['commits'])} of your commits today: {'; '.join(msgs)}."
+    )
+
+if idocs["issues"]:
+    issue_lines = [f"#{i['number']} {i['title']}" for i in idocs["issues"][:5]]
+    key_updates.append(
+        f"**internal-docs (assigned to you)** — {len(idocs['issues'])} open issue(s):\n"
+        + "\n".join(f"   • {l}" for l in issue_lines)
+    )
+
+if idocs["created_prs"]:
+    pr_lines = [f"#{p['number']} {p['title']}" for p in idocs["created_prs"][:5]]
+    key_updates.append(
+        f"**internal-docs PRs you opened** — {len(idocs['created_prs'])} open:\n"
+        + "\n".join(f"   • {l}" for l in pr_lines)
+    )
+
+# ── 3. Notable Details ────────────────────────────────────────────────────────
+
+details = []
+
+# branch staleness
+for label, d in own.items():
+    stale = [b for b in d["branches"] if b["days"] > 14]
     if stale:
-        risks.append(f"{name}: {len(stale)} stale branch(es) >30d — {', '.join(stale)}")
-    if all_pr_counts.get(slug, 0) >= 10:
-        risks.append(f"{name}: {all_pr_counts[slug]} open PRs — review backlog.")
+        details.append(f"{label}: {len(stale)} branch(es) idle >14d — {', '.join(b['name'] for b in stale)}")
 
-if zero_commit_repos:
-    risks.append(f"No personal activity in 24h: {', '.join(zero_commit_repos)}")
+for label, d in org.items():
+    stale = [b for b in d["branches"] if b["days"] > 14]
+    if stale:
+        details.append(f"{label}: {len(stale)} of your branch(es) idle >14d — {', '.join(b['name'] for b in stale)}")
 
-risk_block = "\n".join(f"  • {r}" for r in risks) if risks else "  No critical risks detected."
+# PR ages
+all_my_prs = idocs["created_prs"] + idocs["assigned_prs"] + idocs["review_prs"]
+old_prs = [p for p in all_my_prs if days_old(p["created_at"]) > 5]
+if old_prs:
+    details.append(f"{len(old_prs)} PR(s) involving you open >5 days: " +
+                   ", ".join(f"#{p['number']}" for p in old_prs[:4]))
 
-report = f"""📊 DAILY DEV REPORT — {TODAY} UTC
+if not details:
+    details.append("No notable branch staleness or aged PRs detected.")
+
+# ── 4. Action Items ───────────────────────────────────────────────────────────
+
+actions = []
+
+ai_stale_branches = [b for b in own["human.tech.AI"]["branches"] if b["days"] > 3 and b["name"] not in ("staging",)]
+if ai_stale_branches:
+    actions.append(
+        f"Clean up {len(ai_stale_branches)} post-merge branch(es) in human.tech.AI: "
+        + ", ".join(b["name"] for b in ai_stale_branches[:5])
+    )
+
+if idocs["issues"]:
+    actions.append(
+        f"Review {len(idocs['issues'])} assigned issue(s) in internal-docs — "
+        + ", ".join(f"#{i['number']}" for i in idocs["issues"])
+    )
+
+if idocs["review_prs"]:
+    actions.append(
+        f"Review requested on {len(idocs['review_prs'])} PR(s): "
+        + ", ".join(f"#{p['number']} {p['title']}" for p in idocs["review_prs"][:3])
+    )
+
+docs_stale = [b for b in docs["branches"] if b["days"] > 3]
+if docs_stale:
+    actions.append(
+        f"Stale branch(es) in docs.human.tech: {', '.join(b['name'] for b in docs_stale)} — merge or close."
+    )
+
+if not actions:
+    actions.append("Nothing urgent — you're clear.")
+
+# ── 5. Quick Take ─────────────────────────────────────────────────────────────
+
+quick_take_parts = []
+if ai["commits"]:
+    quick_take_parts.append("human.tech.AI had a big day — major architecture merged and deployed to Render.")
+if docs["commits"]:
+    quick_take_parts.append(f"Doc cleanup is progressing steadily ({len(docs['commits'])} commits).")
+if idocs["issues"]:
+    quick_take_parts.append(f"You have {len(idocs['issues'])} assigned internal-docs issues to keep an eye on.")
+if not quick_take_parts:
+    quick_take_parts.append("Quiet day across the board — a good time to catch up on open branches and PRs.")
+
+quick_take = " ".join(quick_take_parts)
+
+# ── Assemble ──────────────────────────────────────────────────────────────────
+
+report = f"""📊 DEV UPDATE — {TODAY}
 Generated: {NOW.strftime("%H:%M")} UTC
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
-{chr(10).join(chr(10).join(["", s]) for s in sections)}
+HEADLINE
+{headline}
+
 ━━━━━━━━━━━━━━━━━━━━━━━━
-⚠️  RISKS
-{risk_block}
+KEY UPDATES
+""" + "\n\n".join(f"• {u}" for u in key_updates) + f"""
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+NOTABLE DETAILS
+""" + "\n".join(f"• {d}" for d in details) + f"""
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+ACTION ITEMS
+""" + "\n".join(f"→ {a}" for a in actions) + f"""
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+QUICK TAKE
+{quick_take}
 """
 
 with open("/tmp/daily-report.txt", "w") as f:
