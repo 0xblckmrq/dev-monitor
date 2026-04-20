@@ -1,5 +1,5 @@
-📊 DEV UPDATE — April 19, 2026
-Generated: 08:44 UTC
+📊 DEV UPDATE — April 20, 2026
+Generated: 09:52 UTC
 
 TL;DR: 5 issues assigned to you in internal-docs
 
@@ -28,13 +28,13 @@ NOTABLE DETAILS
 ACTION ITEMS
 Issue #315 — Q1 2026 Quarterly Report — draft and publish [traction:content]
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/315
-Opened 2d ago | Last updated 1d ago | 4 comment(s) | Owners: 0xblckmrq
+Opened 3d ago | Last updated 2d ago | 4 comment(s) | Owners: 0xblckmrq
 
 → https://github.com/holonym-foundation/internal-docs/issues/315
 ────────────────────────────────────────
 Issue #277 — human.tech.AI Discord Bot — Architecture Update & Documentation Gaps [traction:ops]
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/277
-Opened 2d ago | Last updated 2d ago | 0 comment(s) | Owners: lebraat, 0xblckmrq
+Opened 3d ago | Last updated 3d ago | 0 comment(s) | Owners: lebraat, 0xblckmrq
 
 What needs to happen:
   - [ ] Add scrape.js to the repo (missing from git tree — critical)
@@ -57,7 +57,7 @@ Open items:
 ────────────────────────────────────────
 Issue #274 — human.tech.AI Discord Bot — Documentation Status & Next Steps [traction:ops]
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/274
-Opened 2d ago | Last updated 2d ago | 0 comment(s) | Owners: lebraat, 0xblckmrq
+Opened 3d ago | Last updated 3d ago | 0 comment(s) | Owners: lebraat, 0xblckmrq
 
 What needs to happen:
   - [ ] Raise `MAX_PAGES_PER_SITE=100` to capture remaining 53 pages of `docs.passport.xyz`
@@ -77,7 +77,7 @@ Open items:
 ────────────────────────────────────────
 Issue #201 — Docs Migration to Nextra (Vercel) — Status & Next Steps [traction:content]
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/201
-Opened 4d ago | Last updated 1d ago | 9 comment(s) | Owners: lebraat, itsleviosa, 0xblckmrq, citizenkaro, mikesletters
+Opened 5d ago | Last updated 2d ago | 9 comment(s) | Owners: lebraat, itsleviosa, 0xblckmrq, citizenkaro, mikesletters
 
 What needs to happen:
   - [x] Update and fix missing or broken hyperlinks
@@ -93,7 +93,7 @@ Open items:
 ────────────────────────────────────────
 Issue #50 — Traction team roles and GTM ownership [traction:gtm]
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/50
-Opened 9d ago | Last updated 4d ago | 5 comment(s) | Owners: hebbianloop, lebraat, 0xblckmrq, holosoe, citizenkaro, Murghhh
+Opened 10d ago | Last updated 5d ago | 5 comment(s) | Owners: hebbianloop, lebraat, 0xblckmrq, holosoe, citizenkaro, Murghhh
 
 Your role:
   ▎ - @0xblckmrq — Community and marketing
