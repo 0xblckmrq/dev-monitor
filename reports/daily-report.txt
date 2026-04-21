@@ -1,15 +1,18 @@
-📊 DEV UPDATE — April 20, 2026
-Generated: 09:52 UTC
+📊 DEV UPDATE — April 21, 2026
+Generated: 09:18 UTC
 
-TL;DR: 5 issues assigned to you in internal-docs
+TL;DR: 12 commits across 1 repo(s) · human.tech.AI: major feature push live on Render · 5 issues assigned to you in internal-docs
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 HEADLINE
-No commits in the last 24 hours across monitored repos. May be a quiet day or work is on untracked branches.
+12 commits in the last 24 hours across 1 repo(s). Most active: human.tech.AI — "Archive ticket T-1". You have 5 open issues assigned to you.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 KEY UPDATES
-• **human.tech.AI** — No commits today. 1 branch(es) idle >7d.
+• **human.tech.AI** — 12 commits today.
+   Recent: Archive ticket T-1; Paginated macro picker with Previous / Next / Search / Close (#24); Auto-sync macros.example.json from docs/macros.md via GitHub Actions (#23).
+   Context: 23 open branches. Major feature merge landed (slash commands, scrape-once architecture, Render deployment).
+   Impact: Bot is live on Render with a significantly expanded feature set.
 
 • **human.tech.bot** — No commits in 24 hours. Last active 9 days ago.
 
@@ -28,13 +31,13 @@ NOTABLE DETAILS
 ACTION ITEMS
 Issue #315 — Q1 2026 Quarterly Report — draft and publish [traction:content]
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/315
-Opened 3d ago | Last updated 2d ago | 4 comment(s) | Owners: 0xblckmrq
+Opened 4d ago | Last updated 3d ago | 4 comment(s) | Owners: 0xblckmrq
 
 → https://github.com/holonym-foundation/internal-docs/issues/315
 ────────────────────────────────────────
 Issue #277 — human.tech.AI Discord Bot — Architecture Update & Documentation Gaps [traction:ops]
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/277
-Opened 3d ago | Last updated 3d ago | 0 comment(s) | Owners: lebraat, 0xblckmrq
+Opened 4d ago | Last updated 4d ago | 0 comment(s) | Owners: lebraat, 0xblckmrq
 
 What needs to happen:
   - [ ] Add scrape.js to the repo (missing from git tree — critical)
@@ -57,7 +60,7 @@ Open items:
 ────────────────────────────────────────
 Issue #274 — human.tech.AI Discord Bot — Documentation Status & Next Steps [traction:ops]
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/274
-Opened 3d ago | Last updated 3d ago | 0 comment(s) | Owners: lebraat, 0xblckmrq
+Opened 4d ago | Last updated 17h ago | 1 comment(s) | Owners: lebraat, 0xblckmrq
 
 What needs to happen:
   - [ ] Raise `MAX_PAGES_PER_SITE=100` to capture remaining 53 pages of `docs.passport.xyz`
@@ -77,7 +80,7 @@ Open items:
 ────────────────────────────────────────
 Issue #201 — Docs Migration to Nextra (Vercel) — Status & Next Steps [traction:content]
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/201
-Opened 5d ago | Last updated 2d ago | 9 comment(s) | Owners: lebraat, itsleviosa, 0xblckmrq, citizenkaro, mikesletters
+Opened 6d ago | Last updated 3d ago | 9 comment(s) | Owners: lebraat, itsleviosa, 0xblckmrq, citizenkaro, mikesletters
 
 What needs to happen:
   - [x] Update and fix missing or broken hyperlinks
@@ -93,7 +96,7 @@ Open items:
 ────────────────────────────────────────
 Issue #50 — Traction team roles and GTM ownership [traction:gtm]
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/50
-Opened 10d ago | Last updated 5d ago | 5 comment(s) | Owners: hebbianloop, lebraat, 0xblckmrq, holosoe, citizenkaro, Murghhh
+Opened 11d ago | Last updated 6d ago | 5 comment(s) | Owners: hebbianloop, lebraat, 0xblckmrq, holosoe, citizenkaro, Murghhh
 
 Your role:
   ▎ - @0xblckmrq — Community and marketing
@@ -114,4 +117,4 @@ Once resolved, flows into:
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 QUICK TAKE
-5 assigned internal-docs issues need your attention.
+human.tech.AI had a major day — architecture merged and deployed to Render. 5 assigned internal-docs issues need your attention.
