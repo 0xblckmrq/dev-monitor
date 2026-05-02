@@ -1,249 +1,896 @@
-📊 DEV UPDATE — April 22, 2026
-Generated: 09:13 UTC
+📊 DEV UPDATE — May 02, 2026
+Generated: 08:59 UTC
 
-TL;DR: 21 commits across 1 repo(s) · human.tech.AI: major feature push live on Render · 15 issues assigned to you in internal-docs
+TL;DR: 19 issues assigned to you in internal-docs
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 HEADLINE
-21 commits in the last 24 hours across 1 repo(s). Most active: human.tech.AI — "Bypass AI rate limit for mods and admins (#32)". You have 15 open issues assigned to you.
+No commits in the last 24 hours across monitored repos. May be a quiet day or work is on untracked branches.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 KEY UPDATES
-• **human.tech.AI** — 21 commits today.
-   Recent: Bypass AI rate limit for mods and admins (#32); Silence MaxListenersExceededWarning on Discord client (#31); Sync holonym-foundation/docs.human.tech as canonical KB source (#30).
-   Context: 31 open branches. Major feature merge landed (slash commands, scrape-once architecture, Render deployment).
-   Impact: Bot is live on Render with a significantly expanded feature set.
+• **human.tech.AI** — No commits today. 34 branch(es) idle >7d.
 
 • **human.tech.bot** — No commits in 24 hours. Last active 9 days ago.
 
-• **internal-docs** — 15 open issue(s) assigned to you:
-   • #505 Support Migration: Evaluate AI model upgrade (Haiku → Sonnet/Opus)
-   • #504 Support Migration: Migrate Intercom help articles to knowledgebase
-   • #502 Support Migration: Migrate bot hosting to company infrastructure
-   • #501 Support Migration: Update external docs referencing old support flow
-   • #500 Support Migration: Remove Intercom SDK/scripts from all codebases
-   • #499 Support Migration: Cancel Intercom subscription
-   • #498 Support Migration: Remove Intercom widget and update all support links
-   • #497 Support Migration: Document Intercom-only workflows (email, CSAT, integrations)
-   • #496 Support Migration: Audit Intercom categories against Discord taxonomy
-   • #495 Roadmap: Support Migration — Intercom to Discord
-   • #315 Q1 2026 Quarterly Report — draft and publish
-   • #277 human.tech.AI Discord Bot — Architecture Update & Documentation Gaps
-   • #274 human.tech.AI Discord Bot — Documentation Status & Next Steps
-   • #201 Docs Migration to Nextra (Vercel) — Status & Next Steps
-   • #50 Traction team roles and GTM ownership
+• **internal-docs** — 19 open issue(s) assigned to you:
+   • #732 Iris: Matrix digest bridge to #iris-feed (daily + weekly)
+   • #731 Iris: chat-bubble v1 spec + Passport frontend coordination checkpoint
+   • #730 Model-routing SOP at company/sops/ — extract from Sentinel and apply to Iris
+   • #729 Iris: KB-evolution loop v1 — promote-to-macro + weekly ticket clusters
+   • #728 Iris: replace keyword-overlap relevance with semantic embeddings
+   • #726 Iris: Matrix-bridge module (outbound-only, standalone Node.js)
+   • #725 Iris: Matrix human-in-the-loop approval gate for trifecta-violating actions
+   • #723 Iris: governance spec — agents/iris/CLAUDE.md (sync to deployment)
+   • #722 Roadmap: Iris Phase 2 + agent reproducibility
+   • #715 Decommission: Remove outdated links in Intercom Fin responses
+   • #713 Decommission docs.holonym.id — outdated, replace with docs.human.tech
+   • #701 Iris: Add technical FAQ entries to knowledge base for custom answers
+   • #699 Verification Bot: Update signer page to brand design system
+   • #649 Iris: Review vision and planning document
+   • #634 Passport: ZK Email Stamp Verification fails before Google authentication step
+   • #632 WaaP: Unpredictable swap behavior — inconsistent results and silent failures
+   • #624 Roadmap: Verification Bot Migration — Personal to Company Infrastructure
+   • #598 Add Iris agent governance spec to agents/
+   • #595 Support Migration: Secure Anthropic API credits for bot operation
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 NOTABLE DETAILS
-• No notable branch staleness or aged PRs detected.
+• human.tech.AI: 7 branch(es) idle >14d — add-lockfile, feature-enhancements, fix-js-rendered-scraping, scrape-once-serve-forever, security-hardening, staging, update-overview
+• human.tech.bot: 1 branch(es) idle >14d — staging
+• 1 PR(s) involving you open >5 days: #599
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 ACTION ITEMS
-Issue #505 — Support Migration: Evaluate AI model upgrade (Haiku → Sonnet/Opus) [traction:ops]
-holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/505
-Opened 12h ago | Last updated 12h ago | 0 comment(s) | Owners: 0xblckmrq
-
-Open items:
-  ☐ Run a sample of 50+ real user questions through Haiku, Sonnet, and Opus — blind-rate the answers
-  ☐ Compare cost per message across models at current volume
-  ☐ Evaluate impact on NO_ANSWER rate (does a stronger model answer more questions correctly?)
-  ☐ Make a go/no-go decision with cost-benefit analysis
-
-→ https://github.com/holonym-foundation/internal-docs/issues/505
-────────────────────────────────────────
-Issue #504 — Support Migration: Migrate Intercom help articles to knowledgebase [traction:ops]
-holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/504
-Opened 12h ago | Last updated 12h ago | 0 comment(s) | Owners: itsleviosa, 0xblckmrq
-
-Open items:
-  ☐ Audit Intercom help center: identify articles with real user traffic or unique content not already in knowledge base
-  ☐ Migrate selected articles to the knowledge base (rewrite to brand tone where needed)
-  ☐ Set up redirects from old article URLs if applicable
-  ☐ Retire any outdated or redundant articles
-
-→ https://github.com/holonym-foundation/internal-docs/issues/504
-────────────────────────────────────────
-Issue #502 — Support Migration: Migrate bot hosting to company infrastructure [traction:ops]
-holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/502
-Opened 12h ago | Last updated 12h ago | 0 comment(s) | Owners: 0xblckmrq
-
-Open items:
-  ☐ Migrate environment variables and secrets
-  ☐ Set up deployment pipeline (GitHub Actions → hosting provider)
-  ☐ Verify bot runs correctly on new infrastructure (scraper, bot, ticket archiving, weekly reports)
-  ☐ Decommission personal Render instance
-
-→ https://github.com/holonym-foundation/internal-docs/issues/502
-────────────────────────────────────────
-Issue #501 — Support Migration: Update external docs referencing old support flow [devrel:docs, traction:ops]
-holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/501
-Opened 12h ago | Last updated 11h ago | 0 comment(s) | Owners: 0xblckmrq
-
-Open items:
-  ☐ Audit README files across all public repos for support links — update
-  ☐ Audit partner materials and onboarding docs for support references — update
-  ☐ Confirm docs.human.tech fully points to Discord with no Intercom fallback links
-
-→ https://github.com/holonym-foundation/internal-docs/issues/501
-────────────────────────────────────────
-Issue #500 — Support Migration: Remove Intercom SDK/scripts from all codebases [eng:ops]
-holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/500
-Opened 12h ago | Last updated 12h ago | 0 comment(s) | Owners: 0xblckmrq, holosoe
-
-Open items:
-  ☐ Search all repos for Intercom SDK, script tags, API keys, and environment variables
-  ☐ Remove all Intercom code, dependencies, and configuration
-  ☐ Verify no runtime errors after removal on all affected properties
-  ☐ Remove Intercom-related environment variables from deployment configs (Vercel, Render, etc.)
-
-→ https://github.com/holonym-foundation/internal-docs/issues/500
-────────────────────────────────────────
-Issue #499 — Support Migration: Cancel Intercom subscription [traction:ops]
-holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/499
-Opened 12h ago | Last updated 11h ago | 0 comment(s) | Owners: lebraat, 0xblckmrq
-
-Open items:
-  ☐ Cancel Intercom subscription
-  ☐ Confirm no billing after cancellation
-
-→ https://github.com/holonym-foundation/internal-docs/issues/499
-────────────────────────────────────────
-Issue #498 — Support Migration: Remove Intercom widget and update all support links [eng:ops, traction:ops]
-holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/498
-Opened 12h ago | Last updated 11h ago | 0 comment(s) | Owners: 0xblckmrq
-
-Open items:
-  ☐ Remove Intercom widget from passport.human.tech
-  ☐ Remove Intercom widget from id.human.tech
-  ☐ Remove Intercom widget from any other properties running the Intercom SDK
-  ☐ Replace all "Contact Support" links with Discord invite + `#ask-question-here-to-open-ticket` channel link
-  ☐ Update docs.human.tech to redirect to Discord for live support (keep KB articles accessible)
-
-→ https://github.com/holonym-foundation/internal-docs/issues/498
-────────────────────────────────────────
-Issue #497 — Support Migration: Document Intercom-only workflows (email, CSAT, integrations) [traction:ops]
-holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/497
-Opened 12h ago | Last updated 12h ago | 0 comment(s) | Owners: itsleviosa, 0xblckmrq
-
-Open items:
-  ☐ Document email follow-up workflows (how do users currently reply via email? what happens?)
-  ☐ Document CSAT survey flows (when triggered, response rates, how results are used)
-  ☐ Inventory Intercom integrations: webhooks, Zapier, CRM, Slack, any third-party connections
-  ☐ For each workflow: replicate in Discord, find an alternative, or explicitly retire with justification
-
-→ https://github.com/holonym-foundation/internal-docs/issues/497
-────────────────────────────────────────
-Issue #496 — Support Migration: Audit Intercom categories against Discord taxonomy [traction:ops]
-holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/496
-Opened 12h ago | Last updated 12h ago | 0 comment(s) | Owners: itsleviosa, 0xblckmrq
-
-Open items:
-  ☐ Export list of all Intercom tags and conversation categories currently in use
-  ☐ Map each to the Discord taxonomy: WaaP, Passport, Covenant, Refunds, Bugs, Other
-  ☐ Identify any Intercom categories not covered by Discord — add new categories or document why they're retired
-  ☐ Confirm mod role routing covers all mapped categories
-
-→ https://github.com/holonym-foundation/internal-docs/issues/496
-────────────────────────────────────────
-Issue #495 — Roadmap: Support Migration — Intercom to Discord [eng:ops, traction:ops]
-holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/495
-Opened 12h ago | Last updated 12h ago | 0 comment(s) | Owners: itsleviosa, 0xblckmrq
-
-Open items:
-  ☐ #496 Audit Intercom categories against Discord taxonomy
-  ☐ #497 Document Intercom-only workflows (email, CSAT, integrations)
-  ☐ #498 Remove Intercom widget and update all support links
-  ☐ #499 Export Intercom history and cancel subscription
-  ☐ #500 Remove Intercom SDK/scripts from all codebases
-
-→ https://github.com/holonym-foundation/internal-docs/issues/495
-────────────────────────────────────────
-Issue #315 — Q1 2026 Quarterly Report — draft and publish [traction:content]
-holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/315
-Opened 5d ago | Last updated 4d ago | 4 comment(s) | Owners: 0xblckmrq, citizenkaro
-
-→ https://github.com/holonym-foundation/internal-docs/issues/315
-────────────────────────────────────────
-Issue #277 — human.tech.AI Discord Bot — Architecture Update & Documentation Gaps [traction:ops]
-holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/277
-Opened 5d ago | Last updated 5d ago | 0 comment(s) | Owners: lebraat, 0xblckmrq
-
-What needs to happen:
-  - [ ] Add scrape.js to the repo (missing from git tree — critical)
-  - [ ] Add .env.example with all documented variables
-  - [ ] Update roadmap FAQ answer in docs/faq-core.md
-  - [ ] Add docs.waap.xyz to WEBSITE_URLS
-  - [ ] Manually update docs/twitter-waapxyz.md until Nitter recovers for @waapxyz
-  - [ ] Write deployment and ops runbook
-  - [ ] Transfer repo to holonym-foundation organization
-  - [ ] Migrate deployment from Render to Vercel under holonym-foundation
-
-Open items:
-  ☐ Add scrape.js to the repo (missing from git tree — critical)
-  ☐ Add .env.example with all documented variables
-  ☐ Update roadmap FAQ answer in docs/faq-core.md
-  ☐ Add docs.waap.xyz to WEBSITE_URLS
-  ☐ Manually update docs/twitter-waapxyz.md until Nitter recovers for @waapxyz
-
-→ https://github.com/holonym-foundation/internal-docs/issues/277
-────────────────────────────────────────
-Issue #274 — human.tech.AI Discord Bot — Documentation Status & Next Steps [traction:ops]
-holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/274
-Opened 5d ago | Last updated 1d ago | 1 comment(s) | Owners: lebraat, 0xblckmrq
-
-What needs to happen:
-  - [ ] Raise `MAX_PAGES_PER_SITE=100` to capture remaining 53 pages of `docs.passport.xyz`
-  - [ ] Add manual content to `docs/twitter-waapxyz.md` until Nitter recovers for `@waapxyz`
-  - [ ] Update roadmap FAQ answer in `faq-core.md` to reflect current public messaging
-  - [ ] Add key blog posts from `human.tech/blog` manually to `docs/` (JS-rendered, scraper cannot read)
-  - [ ] Write a deployment and ops runbook (hosting, env vars, restart procedure, cost monitoring)
-
-Open items:
-  ☐ Raise `MAX_PAGES_PER_SITE=100` to capture remaining 53 pages of `docs.passport.xyz`
-  ☐ Add manual content to `docs/twitter-waapxyz.md` until Nitter recovers for `@waapxyz`
-  ☐ Update roadmap FAQ answer in `faq-core.md` to reflect current public messaging
-  ☐ Add key blog posts from `human.tech/blog` manually to `docs/` (JS-rendered, scraper cannot read)
-  ☐ Write a deployment and ops runbook (hosting, env vars, restart procedure, cost monitoring)
-
-→ https://github.com/holonym-foundation/internal-docs/issues/274
-────────────────────────────────────────
-Issue #201 — Docs Migration to Nextra (Vercel) — Status & Next Steps [traction:content]
-holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/201
-Opened 7d ago | Last updated 21h ago | 10 comment(s) | Owners: lebraat, itsleviosa, 0xblckmrq, citizenkaro, mikesletters
-
-What needs to happen:
-  - [x] Update and fix missing or broken hyperlinks
-  - [x] Make minor styling adjustments
-  - [x] Refine fonts if needed
-
-Open items:
-  ☐ Add FAQs for Human ID
-  ☐ Add FAQs for WaaP
-  ☐ Expand Bridge documentation
-
-→ https://github.com/holonym-foundation/internal-docs/issues/201
-────────────────────────────────────────
-Issue #50 — Traction team roles and GTM ownership [traction:gtm]
-holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/50
-Opened 12d ago | Last updated 7d ago | 5 comment(s) | Owners: hebbianloop, lebraat, 0xblckmrq, holosoe, citizenkaro, Murghhh
+Issue #732 — Iris: Matrix digest bridge to #iris-feed (daily + weekly) [traction:ops]
+holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/732
+Opened 16h ago | Last updated 11h ago | 1 comment(s) | Owners: 0xblckmrq
 
 Your role:
-  ▎ - @0xblckmrq — Community and marketing
-  ▎ ## GTM Ownership Matrix
+  ▎ - [ ] @0xblckmrq wires Iris's existing daily-digest + weekly-report posters to also post to Matrix via the bridge from sub #3
+  ▎ - [ ] Reuse the existing digest format (no new content engineering) — same structured JSONL → markdown transform
+  ▎ - [ ] Document the channel in `agents/iris/CLAUDE.md` (sub #1)
 
-What needs to happen:
-  @lebraat — review and confirm or propose changes. Tag anyone who should weigh in.
-  Everyone tagged: please comment with questions, concerns, or adjustments. This will be finalized at Tuesday traction IPM.
+Open items:
+  ☐ @hebbianloop / Sentinel owner provisions `#iris-feed` Matrix channel + Iris MXID (track in #1 governance spec)
+  ☐ @0xblckmrq wires Iris's existing daily-digest + weekly-report posters to also post to Matrix via the bridge from sub #3
+  ☐ Reuse the existing digest format (no new content engineering) — same structured JSONL → markdown transform
+  ☐ Document the channel in `agents/iris/CLAUDE.md` (sub #1)
 
-Once resolved, flows into:
-  Once finalized, these assignments flow into:
-  - `company/team.md` — RACI matrix and role descriptions
-  - `company/ops/kpi-framework.md` — KPI owners
-  - `company/okrs/human-tech-okrs.md` — OKR owner reassignment
-  - Individual GTM launch docs in `products/waap/gtm/launches/active/`
+→ https://github.com/holonym-foundation/internal-docs/issues/732
+────────────────────────────────────────
+Issue #731 — Iris: chat-bubble v1 spec + Passport frontend coordination checkpoint [traction:ops, product:passport]
+holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/731
+Opened 16h ago | Last updated 16h ago | 0 comment(s) | Owners: hebbianloop, 0xblckmrq
 
-→ https://github.com/holonym-foundation/internal-docs/issues/50
+Your role:
+  ▎ - [ ] @0xblckmrq drafts the chat-bubble v1 spec: embed snippet, KB-backed answer flow, branding, identity (does the bubble need user login? probably not for v1), rate limits per page, fallback to Discord if no answer
+  ▎ - [ ] Coordination checkpoint occurs; spec updated with frontend owner's input
+  ▎ - [ ] Spec PR'd into `internal-docs/products/passport/` (or wherever fits)
+  ▎ - [ ] Decision: ship target date for v1 — **must hit end of month** if Intercom is to be removed
+
+Open items:
+  ☐ @hebbianloop confirm Passport frontend owner and schedule the coordination checkpoint
+  ☐ @0xblckmrq drafts the chat-bubble v1 spec: embed snippet, KB-backed answer flow, branding, identity (does the bubble need user login? probably not for v1), rate limits per page, fallback to Discord if no answer
+  ☐ Coordination checkpoint occurs; spec updated with frontend owner's input
+  ☐ Spec PR'd into `internal-docs/products/passport/` (or wherever fits)
+  ☐ Decision: ship target date for v1 — **must hit end of month** if Intercom is to be removed
+
+→ https://github.com/holonym-foundation/internal-docs/issues/731
+────────────────────────────────────────
+Issue #730 — Model-routing SOP at company/sops/ — extract from Sentinel and apply to Iris [eng:ops]
+holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/730
+Opened 16h ago | Last updated 16h ago | 0 comment(s) | Owners: lucianHymer, 0xblckmrq
+
+Your role:
+  ▎ - [ ] @0xblckmrq applies tiered routing to Iris with a `MODEL_ROUTING` config
+  ▎ - [ ] Run a Kimi-vs-Haiku judge eval on 50 historical Iris questions; commit the eval report to `reports/`
+  ▎ - [ ] If Kimi within 10% of Haiku → switch the default tier to Kimi; otherwise keep Haiku
+  ▎ - [ ] Reflect cost change in the next weekly report
+
+Open items:
+  ☐ @lucianHymer extracts `sentinel/meta/model-routing.md` into model-agnostic `company/sops/model-routing.md`
+  ☐ @0xblckmrq applies tiered routing to Iris with a `MODEL_ROUTING` config
+  ☐ Run a Kimi-vs-Haiku judge eval on 50 historical Iris questions; commit the eval report to `reports/`
+  ☐ If Kimi within 10% of Haiku → switch the default tier to Kimi; otherwise keep Haiku
+  ☐ Reflect cost change in the next weekly report
+
+→ https://github.com/holonym-foundation/internal-docs/issues/730
+────────────────────────────────────────
+Issue #729 — Iris: KB-evolution loop v1 — promote-to-macro + weekly ticket clusters [traction:ops]
+holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/729
+Opened 16h ago | Last updated 16h ago | 0 comment(s) | Owners: 0xblckmrq
+
+Open items:
+  ☐ Add a "Promote to macro" button to the auto-FAQ alert embed (`bot.js:1570-1583`)
+  ☐ On click, route the action through the Matrix approval gate (sub #2b)
+  ☐ On approval, create the macro in `macros.json` with the suggested answer; on next ask, the macro answers
+  ☐ Weekly: cluster closed tickets (use embeddings from sub #5a) into top-N issue patterns, write to a `reports/weekly-clusters-YYYY-MM-DD.md` file in the Iris repo for Maylynne's review
+  ☐ No auto-filing to dev team in v1 — the cluster summary is for Maylynne only
+
+→ https://github.com/holonym-foundation/internal-docs/issues/729
+────────────────────────────────────────
+Issue #728 — Iris: replace keyword-overlap relevance with semantic embeddings [traction:ops]
+holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/728
+Opened 16h ago | Last updated 16h ago | 0 comment(s) | Owners: 0xblckmrq
+
+Open items:
+  ☐ Pick an embedding strategy: pgvector, local FAISS, or a hosted vector DB. Decision driven by cost + ops complexity, not by feature parity
+  ☐ Index the existing KB (`kb.json` sources + macros) at scrape time. Reuse the existing `_allDocs()` composition pattern in `bot.js` — keep the interface, swap the scorer
+  ☐ Replace `scoreRelevance()` with embeddings-based scorer
+  ☐ Keep the +30 local-FAQ bonus equivalent (curated content should still rank high)
+  ☐ Verify with the existing `!kb-test` admin command — pick 10 historical NO_ANSWER questions and confirm at least 5 now return the right doc
+
+→ https://github.com/holonym-foundation/internal-docs/issues/728
+────────────────────────────────────────
+Issue #726 — Iris: Matrix-bridge module (outbound-only, standalone Node.js) [traction:ops]
+holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/726
+Opened 16h ago | Last updated 16h ago | 0 comment(s) | Owners: 0xblckmrq
+
+Open items:
+  ☐ Verify `matrix-js-sdk` E2EE path works for our use case (or pick a simpler outbound-only client). **Do not start coding the bridge until this is verified** — if E2EE is a tarpit in Node, that's the trigger to revisit Hermes migration
+  ☐ Implement outbound posting to a Matrix room (room ID configurable via env)
+  ☐ Add a thin wrapper for the approval-prompt pattern (used by sub #2b)
+  ☐ Document the bridge in `agents/iris/CLAUDE.md` (sub #1)
+
+→ https://github.com/holonym-foundation/internal-docs/issues/726
+────────────────────────────────────────
+Issue #725 — Iris: Matrix human-in-the-loop approval gate for trifecta-violating actions [eng:ops, traction:ops]
+holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/725
+Opened 16h ago | Last updated 16h ago | 0 comment(s) | Owners: 0xblckmrq
+
+Open items:
+  ☐ Define approval message format (room, payload, timeout, fallback)
+  ☐ Implement client in Iris that posts approval requests to a Matrix room
+  ☐ Wire #5b promote-to-macro and #4 spam-ban actions through this gate
+  ☐ Document the allow-list in `agents/iris/CLAUDE.md` (sub #1)
+  ☐ Test: trigger a promote-to-macro from a NO_ANSWER alert → approval lands in Matrix room → mod approves → macro gets created
+
+→ https://github.com/holonym-foundation/internal-docs/issues/725
+────────────────────────────────────────
+Issue #723 — Iris: governance spec — agents/iris/CLAUDE.md (sync to deployment) [eng:ops, traction:ops]
+holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/723
+Opened 16h ago | Last updated 16h ago | 0 comment(s) | Owners: hebbianloop, 0xblckmrq
+
+Your role:
+  ▎ - [ ] Create `agents/iris/CLAUDE.md` covering: identity (MXID once provisioned, repo, runtime), purpose + scope, inputs (Discord, KB sources, GitHub PAT), outputs (Discord posts, archive commits, weekly reports), data access, primary owner (@0xblckmrq), trifecta declaration + current behavioral mitigations, escalation rules
+  ▎ - [ ] Update `agents/README.md` agents table to include Iris
+  ▎ - [ ] Update `.github/CODEOWNERS` — add `agents/iris/  @0xblckmrq @hebbianloop`
+  ▎ - [ ] PR review by @hebbianloop per CODEOWNERS
+
+Open items:
+  ☐ Create `agents/iris/CLAUDE.md` covering: identity (MXID once provisioned, repo, runtime), purpose + scope, inputs (Discord, KB sources, GitHub PAT), outputs (Discord posts, archive commits, weekly reports), data access, primary owner (@0xblckmrq), trifecta declaration + current behavioral mitigations, escalation rules
+  ☐ Update `agents/README.md` agents table to include Iris
+  ☐ Update `.github/CODEOWNERS` — add `agents/iris/  @0xblckmrq @hebbianloop`
+  ☐ PR review by @hebbianloop per CODEOWNERS
+
+→ https://github.com/holonym-foundation/internal-docs/issues/723
+────────────────────────────────────────
+Issue #722 — Roadmap: Iris Phase 2 + agent reproducibility [eng:ops, traction:ops]
+holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/722
+Opened 16h ago | Last updated 15h ago | 1 comment(s) | Owners: hebbianloop, 0xblckmrq
+
+Your role:
+  ▎ Comprehensive Phase 2 plan for Iris (the Discord support bot, owner @0xblckmrq) plus a parallel push to make the next agent provisioning cheap. Combines: governance retrofit (Iris is the only deployed agent missing its `agents/iris/CLAUDE.md`), token blast-radius reduction, spam defense for the 20k Discord surface, semantic KB + ticket-driven evolution, Matrix digest, chat-bubble Phase 2 (Intercom replacement target: end of month), and the v1 of Sentinel monitoring + onboarding orchestrator that watches Iris from day one and provisions the next agent end-to-end.
+  ▎ This is the first agent owned by someone other than Shady — Maylynne. Sized so retrofit is doable across a few Claude Code sessions reading internal-docs / karon / sentinel / agent registry, not a months-long project.
+
+→ https://github.com/holonym-foundation/internal-docs/issues/722
+────────────────────────────────────────
+Issue #715 — Decommission: Remove outdated links in Intercom Fin responses [devrel:docs, traction:ops]
+holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/715
+Opened 1d ago | Last updated just now | 3 comment(s) | Owners: itsleviosa, 0xblckmrq
+
+Open items:
+  ☐ Audit Intercom Fin's knowledge sources for outdated links (docs.holonym.id, old support pages, deprecated product URLs)
+  ☐ Remove or update all outdated links in Fin's training data / articles
+  ☐ Verify Fin no longer surfaces outdated URLs in responses
+  ☐ If Fin pulls from a knowledge base or article set, confirm all sources point to docs.human.tech
+
+→ https://github.com/holonym-foundation/internal-docs/issues/715
+────────────────────────────────────────
+Issue #713 — Decommission docs.holonym.id — outdated, replace with docs.human.tech [devrel:docs, eng:ops]
+holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/713
+Opened 1d ago | Last updated 1d ago | 0 comment(s) | Owners: hebbianloop, 0xblckmrq
+
+Open items:
+  ☐ Set up a redirect from docs.holonym.id → docs.human.tech (301 permanent)
+  ☐ Remove or archive the old docs.holonym.id source (repo, hosting, CMS)
+  ☐ Search all repos, READMEs, and external docs for links to docs.holonym.id — update to docs.human.tech
+  ☐ Verify Google search results start pointing to docs.human.tech after redirect
+
+→ https://github.com/holonym-foundation/internal-docs/issues/713
+────────────────────────────────────────
+Issue #701 — Iris: Add technical FAQ entries to knowledge base for custom answers [traction:ops]
+holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/701
+Opened 1d ago | Last updated 1d ago | 0 comment(s) | Owners: itsleviosa, 0xblckmrq
+
+Open items:
+  ☐ Audit top NO_ANSWER questions from weekly reports and daily digests — identify recurring technical questions the bot can't answer
+  ☐ Draft custom FAQ entries for the top unanswered questions (written in brand tone)
+  ☐ Add entries to `docs/` folder in the Iris repo (as `.md` files) or as new macros in `docs/macros.md`
+  ☐ Run `!kb-scrape` or `!kb-reload` to pull new entries into the KB
+  ☐ Verify Iris answers the previously-unanswered questions correctly
+
+→ https://github.com/holonym-foundation/internal-docs/issues/701
+────────────────────────────────────────
+Issue #699 — Verification Bot: Update signer page to brand design system [traction:ops]
+holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/699
+Opened 1d ago | Last updated 1d ago | 0 comment(s) | Owners: 0xblckmrq
+
+Open items:
+  ☐ Audit current signer page UI against brand guidelines
+  ☐ Update colors, fonts, and spacing to match human.tech design system
+  ☐ Update copy/messaging to match brand tone (confident, direct, no filler)
+  ☐ Ensure mobile responsiveness
+  ☐ Add human.tech logo and branding assets
+
+→ https://github.com/holonym-foundation/internal-docs/issues/699
+────────────────────────────────────────
+Issue #649 — Iris: Review vision and planning document [traction:ops]
+holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/649
+Opened 4d ago | Last updated 4d ago | 0 comment(s) | Owners: hebbianloop, 0xblckmrq
+
+Open items:
+  ☐ @hebbianloop review `VISION.md` on the `add-vision-doc` branch
+  ☐ Provide feedback — approve direction, flag concerns, or request changes
+  ☐ Once approved, merge branch and open follow-up issues for Phase 1 items
+
+→ https://github.com/holonym-foundation/internal-docs/issues/649
+────────────────────────────────────────
+Issue #634 — Passport: ZK Email Stamp Verification fails before Google authentication step [product:passport]
+holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/634
+Opened 6d ago | Last updated 1d ago | 1 comment(s) | Owners: lucianHymer, lebraat, 0xblckmrq
+
+→ https://github.com/holonym-foundation/internal-docs/issues/634
+────────────────────────────────────────
+Issue #632 — WaaP: Unpredictable swap behavior — inconsistent results and silent failures [eng:bug, product:waap]
+holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/632
+Opened 7d ago | Last updated 1d ago | 2 comment(s) | Owners: calebtuttle, 0xblckmrq
+
+→ https://github.com/holonym-foundation/internal-docs/issues/632
+────────────────────────────────────────
+Issue #624 — Roadmap: Verification Bot Migration — Personal to Company Infrastructure [eng:ops, traction:ops]
+holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/624
+Opened 7d ago | Last updated 2d ago | 0 comment(s) | Owners: 0xblckmrq
+
+→ https://github.com/holonym-foundation/internal-docs/issues/624
+────────────────────────────────────────
+Issue #598 — Add Iris agent governance spec to agents/ [eng:ops, traction:ops]
+holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/598
+Opened 8d ago | Last updated 8d ago | 0 comment(s) | Owners: 0xblckmrq
+
+Open items:
+  ☐ Create `agents/iris/CLAUDE.md` with full spec
+  ☐ Update `agents/README.md` to include Iris in the agents table
+  ☐ Tag @hebbianloop for required review (per governance rules)
+
+→ https://github.com/holonym-foundation/internal-docs/issues/598
+────────────────────────────────────────
+Issue #595 — Support Migration: Secure Anthropic API credits for bot operation [traction:ops]
+holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/595
+Opened 8d ago | Last updated 19h ago | 0 comment(s) | Owners: hebbianloop, lebraat, 0xblckmrq
+
+Open items:
+  ☐ Confirm current Anthropic API credit balance and billing status
+  ☐ Determine who owns the Anthropic account (personal vs. company)
+  ☐ If personal: migrate to a company-owned Anthropic account
+  ☐ Request or purchase sufficient credits to cover projected usage (~$10–$25/month at current volume)
+  ☐ Set up billing alerts to avoid unexpected outages
+
+→ https://github.com/holonym-foundation/internal-docs/issues/595
+────────────────────────────────────────
+PR #681 — docs(sops): Intercom-only workflows — gap analysis and decisions
+holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/pull/681
+Opened 2d ago by itsleviosa | Updated 2d ago | 0 comment(s)
+
+  Documents every Intercom workflow the team actively uses that lacks a full Discord (Iris bot) equivalent. For each workflow: what Intercom does, what the Iris bot currently has, the gap, and a replicate/replace/retire decision with reasoning.
+
+Your action: Review requested from you — leave feedback or approve.
+→ https://github.com/holonym-foundation/internal-docs/pull/681
+────────────────────────────────────────
+PR #599 — Add Iris agent governance spec to agents/
+holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/pull/599
+Opened 8d ago by 0xblckmrq | Updated 13h ago | 0 comment(s)
+
+  - Adds `agents/iris/CLAUDE.md` — governance spec for the Iris Discord support bot
+
+Your action: Your PR — check if it's ready to merge or needs a reviewer assigned.
+→ https://github.com/holonym-foundation/internal-docs/pull/599
+────────────────────────────────────────
+**Title:** Clean up stale branch — add-lockfile
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: add-lockfile | Last commit: 16d ago
+• This branch has had no activity for over 16 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — add-macros-doc
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: add-macros-doc | Last commit: 13d ago
+• This branch has had no activity for over 13 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — add-readme
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: add-readme | Last commit: 14d ago
+• This branch has had no activity for over 14 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — advanced-ticket-controls
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: advanced-ticket-controls | Last commit: 11d ago
+• This branch has had no activity for over 11 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — analytics-sla-weekly-report
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: analytics-sla-weekly-report | Last commit: 10d ago
+• This branch has had no activity for over 10 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — auto-sync-macros
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: auto-sync-macros | Last commit: 11d ago
+• This branch has had no activity for over 11 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — brand/align-bot-tone
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: brand/align-bot-tone | Last commit: 14d ago
+• This branch has had no activity for over 14 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — brand/macros-tone-rewrite
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: brand/macros-tone-rewrite | Last commit: 11d ago
+• This branch has had no activity for over 11 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — category-auto-assign
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: category-auto-assign | Last commit: 14d ago
+• This branch has had no activity for over 14 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — data-dir-persistent-state
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: data-dir-persistent-state | Last commit: 9d ago
+• This branch has had no activity for over 9 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — feature-enhancements
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: feature-enhancements | Last commit: 16d ago
+• This branch has had no activity for over 16 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — fix-archive-collision
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: fix-archive-collision | Last commit: 10d ago
+• This branch has had no activity for over 10 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — fix-duplicate-ticket-locked
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: fix-duplicate-ticket-locked | Last commit: 9d ago
+• This branch has had no activity for over 9 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — fix-js-rendered-scraping
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: fix-js-rendered-scraping | Last commit: 16d ago
+• This branch has had no activity for over 16 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — fix-max-listeners
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: fix-max-listeners | Last commit: 10d ago
+• This branch has had no activity for over 10 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — guide-back-to-open-ticket
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: guide-back-to-open-ticket | Last commit: 14d ago
+• This branch has had no activity for over 14 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — macro-pagination
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: macro-pagination | Last commit: 11d ago
+• This branch has had no activity for over 11 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — macro-preview-copy
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: macro-preview-copy | Last commit: 11d ago
+• This branch has had no activity for over 11 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — macro-search-and-rewrite-sync
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: macro-search-and-rewrite-sync | Last commit: 11d ago
+• This branch has had no activity for over 11 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — macros-in-ai-context
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: macros-in-ai-context | Last commit: 10d ago
+• This branch has had no activity for over 10 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — mod-bypass-ai-rate-limit
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: mod-bypass-ai-rate-limit | Last commit: 10d ago
+• This branch has had no activity for over 10 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — mod-productivity
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: mod-productivity | Last commit: 14d ago
+• This branch has had no activity for over 14 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — mod-ticket-bypass
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: mod-ticket-bypass | Last commit: 10d ago
+• This branch has had no activity for over 10 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — scrape-once-serve-forever
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: scrape-once-serve-forever | Last commit: 15d ago
+• This branch has had no activity for over 15 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — security-hardening
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: security-hardening | Last commit: 16d ago
+• This branch has had no activity for over 16 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — skip-fresh-scrape
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: skip-fresh-scrape | Last commit: 9d ago
+• This branch has had no activity for over 9 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — softer-mod-ping
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: softer-mod-ping | Last commit: 14d ago
+• This branch has had no activity for over 14 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — sync-docs-repo
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: sync-docs-repo | Last commit: 10d ago
+• This branch has had no activity for over 10 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — ticket-followup-ai
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: ticket-followup-ai | Last commit: 14d ago
+• This branch has had no activity for over 14 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — ticketing-system
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: ticketing-system | Last commit: 14d ago
+• This branch has had no activity for over 14 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — unify-close-delete
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: unify-close-delete | Last commit: 10d ago
+• This branch has had no activity for over 10 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — update-macros-from-docs
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: update-macros-from-docs | Last commit: 11d ago
+• This branch has had no activity for over 11 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
+────────────────────────────────────────
+**Title:** Clean up stale branch — update-overview
+
+**Context:**
+• Repo: 0xblckmrq/human.tech.AI | Branch: update-overview | Last commit: 15d ago
+• This branch has had no activity for over 15 days. It may have been superseded by a merge or simply forgotten.
+
+**Current Status:**
+• Branch exists on remote. No open PR associated (or PR is already merged).
+
+**Next Steps:**
+• Check if the work was merged into main. If yes, delete the branch.
+• If the work is still needed, open a PR or rebase and continue.
+
+**Owner:** 0xblckmrq
+
+**Impact:** Stale branches create noise in the repo and make it harder to track what's actually in progress.
+
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 QUICK TAKE
-human.tech.AI had a major day — architecture merged and deployed to Render. 15 assigned internal-docs issues need your attention.
+19 assigned internal-docs issues need your attention.
