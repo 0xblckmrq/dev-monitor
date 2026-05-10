@@ -1,5 +1,5 @@
-📊 DEV UPDATE — May 09, 2026
-Generated: 09:11 UTC
+📊 DEV UPDATE — May 10, 2026
+Generated: 09:23 UTC
 
 TL;DR: 19 issues assigned to you in internal-docs
 
@@ -44,7 +44,7 @@ NOTABLE DETAILS
 ACTION ITEMS
 Issue #858 — WaaP support page: GEO / agent-curious pillar content
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/858
-Opened 1d ago | Last updated 1d ago | 1 comment(s) | Owners: 0xblckmrq, citizenkaro
+Opened 2d ago | Last updated 2d ago | 1 comment(s) | Owners: 0xblckmrq, citizenkaro
 
 Open items:
   ☐ Comparison pillar: WaaP vs Privy
@@ -57,7 +57,7 @@ Open items:
 ────────────────────────────────────────
 Issue #857 — Set up unified user feedback collection system
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/857
-Opened 1d ago | Last updated 18h ago | 0 comment(s) | Owners: itsleviosa, 0xblckmrq, Murghhh
+Opened 2d ago | Last updated 1d ago | 0 comment(s) | Owners: itsleviosa, 0xblckmrq, Murghhh
 
 Open items:
   ☐ Define feedback collection points:
@@ -69,7 +69,7 @@ Open items:
 ────────────────────────────────────────
 Issue #806 — Prep Aztec bridge user/support docs
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/806
-Opened 2d ago | Last updated 2d ago | 0 comment(s) | Owners: 0xblckmrq, citizenkaro
+Opened 3d ago | Last updated 3d ago | 0 comment(s) | Owners: 0xblckmrq, citizenkaro
 
 Open items:
   ☐ Define audience: bridge users, partners, integrators sending end-users to the bridge
@@ -81,7 +81,7 @@ Open items:
 ────────────────────────────────────────
 Issue #799 — Update WaaP support knowledge base
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/799
-Opened 2d ago | Last updated 1d ago | 4 comment(s) | Owners: 0xblckmrq, citizenkaro
+Opened 3d ago | Last updated 2d ago | 4 comment(s) | Owners: 0xblckmrq, citizenkaro
 
 Open items:
   ☐ Audit existing KB articles against current product state (`products/waap/spec.md`)
@@ -94,7 +94,7 @@ Open items:
 ────────────────────────────────────────
 Issue #732 — Iris: Matrix digest bridge to #iris-feed (daily + weekly) [traction:ops]
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/732
-Opened 7d ago | Last updated 7d ago | 1 comment(s) | Owners: 0xblckmrq
+Opened 8d ago | Last updated 8d ago | 1 comment(s) | Owners: 0xblckmrq
 
 Your role:
   ▎ - [ ] @0xblckmrq wires Iris's existing daily-digest + weekly-report posters to also post to Matrix via the bridge from sub #3
@@ -111,7 +111,7 @@ Open items:
 ────────────────────────────────────────
 Issue #731 — Iris: chat-bubble v1 spec + Passport frontend coordination checkpoint [traction:ops, product:passport]
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/731
-Opened 7d ago | Last updated 9h ago | 1 comment(s) | Owners: hebbianloop, 0xblckmrq
+Opened 8d ago | Last updated 1d ago | 1 comment(s) | Owners: hebbianloop, 0xblckmrq
 
 Your role:
   ▎ - [ ] @0xblckmrq drafts the chat-bubble v1 spec: embed snippet, KB-backed answer flow, branding, identity (does the bubble need user login? probably not for v1), rate limits per page, fallback to Discord if no answer
@@ -130,7 +130,7 @@ Open items:
 ────────────────────────────────────────
 Issue #730 — Model-routing SOP at company/sops/ — extract from Sentinel and apply to Iris [eng:ops]
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/730
-Opened 7d ago | Last updated 11h ago | 4 comment(s) | Owners: hebbianloop, lucianHymer, 0xblckmrq
+Opened 8d ago | Last updated 1d ago | 4 comment(s) | Owners: hebbianloop, lucianHymer, 0xblckmrq
 
 Your role:
   ▎ - [ ] @0xblckmrq applies tiered routing to Iris with a `MODEL_ROUTING` config
@@ -149,7 +149,7 @@ Open items:
 ────────────────────────────────────────
 Issue #729 — Iris: KB-evolution loop v1 — promote-to-macro + weekly ticket clusters [traction:ops]
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/729
-Opened 7d ago | Last updated 7d ago | 0 comment(s) | Owners: 0xblckmrq
+Opened 8d ago | Last updated 8d ago | 0 comment(s) | Owners: 0xblckmrq
 
 Open items:
   ☐ Add a "Promote to macro" button to the auto-FAQ alert embed (`bot.js:1570-1583`)
@@ -162,7 +162,7 @@ Open items:
 ────────────────────────────────────────
 Issue #725 — Iris: Matrix human-in-the-loop approval gate for trifecta-violating actions [eng:ops, traction:ops]
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/725
-Opened 7d ago | Last updated 7d ago | 0 comment(s) | Owners: 0xblckmrq
+Opened 8d ago | Last updated 8d ago | 0 comment(s) | Owners: 0xblckmrq
 
 Open items:
   ☐ Define approval message format (room, payload, timeout, fallback)
@@ -175,7 +175,7 @@ Open items:
 ────────────────────────────────────────
 Issue #723 — Iris: governance spec — agents/iris/CLAUDE.md (sync to deployment) [eng:ops, traction:ops]
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/723
-Opened 7d ago | Last updated 2d ago | 1 comment(s) | Owners: hebbianloop, 0xblckmrq
+Opened 8d ago | Last updated 3d ago | 1 comment(s) | Owners: hebbianloop, 0xblckmrq
 
 Your role:
   ▎ - [ ] Create `agents/iris/CLAUDE.md` covering: identity (MXID once provisioned, repo, runtime), purpose + scope, inputs (Discord, KB sources, GitHub PAT), outputs (Discord posts, archive commits, weekly reports), data access, primary owner (@0xblckmrq), trifecta declaration + current behavioral mitigations, escalation rules
@@ -193,7 +193,7 @@ Open items:
 ────────────────────────────────────────
 Issue #722 — Roadmap: Iris Phase 2 + agent reproducibility [eng:ops, traction:ops]
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/722
-Opened 7d ago | Last updated 11h ago | 3 comment(s) | Owners: hebbianloop, 0xblckmrq
+Opened 8d ago | Last updated 1d ago | 3 comment(s) | Owners: hebbianloop, 0xblckmrq
 
 Your role:
   ▎ Comprehensive Phase 2 plan for Iris (the Discord support bot, owner @0xblckmrq) plus a parallel push to make the next agent provisioning cheap. Combines: governance retrofit (Iris is the only deployed agent missing its `agents/iris/CLAUDE.md`), token blast-radius reduction, spam defense for the 20k Discord surface, semantic KB + ticket-driven evolution, Matrix digest, chat-bubble Phase 2 (Intercom replacement target: end of month), and the v1 of Sentinel monitoring + onboarding orchestrator that watches Iris from day one and provisions the next agent end-to-end.
@@ -203,7 +203,7 @@ Your role:
 ────────────────────────────────────────
 Issue #713 — Decommission docs.holonym.id — outdated, replace with docs.human.tech [devrel:docs, eng:ops]
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/713
-Opened 8d ago | Last updated 8d ago | 0 comment(s) | Owners: nanaknihal, 0xblckmrq
+Opened 9d ago | Last updated 9d ago | 0 comment(s) | Owners: nanaknihal, 0xblckmrq
 
 Open items:
   ☐ Set up a redirect from docs.holonym.id → docs.human.tech (301 permanent)
@@ -215,7 +215,7 @@ Open items:
 ────────────────────────────────────────
 Issue #701 — Iris: Add technical FAQ entries to knowledge base for custom answers [traction:ops]
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/701
-Opened 8d ago | Last updated 1d ago | 4 comment(s) | Owners: itsleviosa, 0xblckmrq
+Opened 9d ago | Last updated 2d ago | 4 comment(s) | Owners: itsleviosa, 0xblckmrq
 
 Open items:
   ☐ Audit top NO_ANSWER questions from weekly reports and daily digests — identify recurring technical questions the bot can't answer
@@ -228,7 +228,7 @@ Open items:
 ────────────────────────────────────────
 Issue #649 — Iris: Review vision and planning document [traction:ops]
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/649
-Opened 11d ago | Last updated 2d ago | 1 comment(s) | Owners: hebbianloop, 0xblckmrq
+Opened 12d ago | Last updated 3d ago | 1 comment(s) | Owners: hebbianloop, 0xblckmrq
 
 Open items:
   ☐ @hebbianloop review `VISION.md` on the `add-vision-doc` branch
@@ -239,25 +239,25 @@ Open items:
 ────────────────────────────────────────
 Issue #634 — Passport: ZK Email Stamp Verification fails before Google authentication step [product:passport]
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/634
-Opened 13d ago | Last updated 8d ago | 1 comment(s) | Owners: lucianHymer, brunz-me, 0xblckmrq
+Opened 14d ago | Last updated 9d ago | 1 comment(s) | Owners: lucianHymer, brunz-me, 0xblckmrq
 
 → https://github.com/holonym-foundation/internal-docs/issues/634
 ────────────────────────────────────────
 Issue #632 — WaaP: Unpredictable swap behavior — inconsistent results and silent failures [eng:bug, product:waap]
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/632
-Opened 14d ago | Last updated 8d ago | 2 comment(s) | Owners: calebtuttle, 0xblckmrq
+Opened 15d ago | Last updated 9d ago | 2 comment(s) | Owners: calebtuttle, 0xblckmrq
 
 → https://github.com/holonym-foundation/internal-docs/issues/632
 ────────────────────────────────────────
 Issue #624 — Roadmap: Verification Bot Migration — Personal to Company Infrastructure [eng:ops, traction:ops]
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/624
-Opened 14d ago | Last updated 9d ago | 0 comment(s) | Owners: 0xblckmrq
+Opened 15d ago | Last updated 10d ago | 0 comment(s) | Owners: 0xblckmrq
 
 → https://github.com/holonym-foundation/internal-docs/issues/624
 ────────────────────────────────────────
 Issue #579 — Support Migration: Move bot repo to holonym-foundation GitHub org [eng:ops, traction:ops]
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/579
-Opened 16d ago | Last updated 16d ago | 0 comment(s) | Owners: calebtuttle, 0xblckmrq
+Opened 17d ago | Last updated 17d ago | 0 comment(s) | Owners: calebtuttle, 0xblckmrq
 
 Open items:
   ☐ Create `holonym-foundation/human.tech.AI` (or transfer the existing repo)
@@ -270,7 +270,7 @@ Open items:
 ────────────────────────────────────────
 Issue #532 — Decommission GitBook (migrate fully to Nextra) [devrel:docs, eng:ops, traction:content]
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/issues/532
-Opened 16d ago | Last updated 17h ago | 4 comment(s) | Owners: hebbianloop, brunz-me, itsleviosa, 0xblckmrq
+Opened 17d ago | Last updated 1d ago | 4 comment(s) | Owners: hebbianloop, brunz-me, itsleviosa, 0xblckmrq
 
 Open items:
   ☐ Confirm all content is fully migrated to Nextra @itsleviosa
@@ -283,7 +283,7 @@ Open items:
 ────────────────────────────────────────
 PR #681 — docs(sops): Intercom-only workflows — gap analysis and decisions
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/pull/681
-Opened 9d ago by itsleviosa | Updated 9d ago | 0 comment(s)
+Opened 10d ago by itsleviosa | Updated 10d ago | 0 comment(s)
 
   Documents every Intercom workflow the team actively uses that lacks a full Discord (Iris bot) equivalent. For each workflow: what Intercom does, what the Iris bot currently has, the gap, and a replicate/replace/retire decision with reasoning.
 
@@ -292,7 +292,7 @@ Your action: Review requested from you — leave feedback or approve.
 ────────────────────────────────────────
 PR #753 — Draft chat-bubble v1 spec (Intercom replacement)
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/pull/753
-Opened 4d ago by 0xblckmrq | Updated 4d ago | 0 comment(s)
+Opened 5d ago by 0xblckmrq | Updated 5d ago | 0 comment(s)
 
   - Draft spec for Iris chat-bubble widget to replace Intercom on web properties
 
@@ -301,7 +301,7 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 ────────────────────────────────────────
 PR #599 — Add Iris agent governance spec to agents/
 holonym-foundation/internal-docs → https://github.com/holonym-foundation/internal-docs/pull/599
-Opened 15d ago by 0xblckmrq | Updated 11h ago | 3 comment(s)
+Opened 16d ago by 0xblckmrq | Updated 1d ago | 3 comment(s)
 
   - Adds `agents/iris/CLAUDE.md` — governance spec for the Iris Discord support bot
 
@@ -311,8 +311,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — add-lockfile
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: add-lockfile | Last commit: 23d ago
-• This branch has had no activity for over 23 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: add-lockfile | Last commit: 24d ago
+• This branch has had no activity for over 24 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -329,8 +329,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — add-macros-doc
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: add-macros-doc | Last commit: 20d ago
-• This branch has had no activity for over 20 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: add-macros-doc | Last commit: 21d ago
+• This branch has had no activity for over 21 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -347,8 +347,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — add-readme
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: add-readme | Last commit: 21d ago
-• This branch has had no activity for over 21 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: add-readme | Last commit: 22d ago
+• This branch has had no activity for over 22 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -365,8 +365,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — advanced-ticket-controls
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: advanced-ticket-controls | Last commit: 18d ago
-• This branch has had no activity for over 18 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: advanced-ticket-controls | Last commit: 19d ago
+• This branch has had no activity for over 19 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -383,8 +383,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — analytics-sla-weekly-report
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: analytics-sla-weekly-report | Last commit: 17d ago
-• This branch has had no activity for over 17 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: analytics-sla-weekly-report | Last commit: 18d ago
+• This branch has had no activity for over 18 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -401,8 +401,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — auto-sync-macros
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: auto-sync-macros | Last commit: 18d ago
-• This branch has had no activity for over 18 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: auto-sync-macros | Last commit: 19d ago
+• This branch has had no activity for over 19 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -419,8 +419,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — brand/align-bot-tone
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: brand/align-bot-tone | Last commit: 21d ago
-• This branch has had no activity for over 21 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: brand/align-bot-tone | Last commit: 22d ago
+• This branch has had no activity for over 22 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -437,8 +437,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — brand/macros-tone-rewrite
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: brand/macros-tone-rewrite | Last commit: 18d ago
-• This branch has had no activity for over 18 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: brand/macros-tone-rewrite | Last commit: 19d ago
+• This branch has had no activity for over 19 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -455,8 +455,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — category-auto-assign
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: category-auto-assign | Last commit: 21d ago
-• This branch has had no activity for over 21 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: category-auto-assign | Last commit: 22d ago
+• This branch has had no activity for over 22 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -473,8 +473,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — data-dir-persistent-state
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: data-dir-persistent-state | Last commit: 16d ago
-• This branch has had no activity for over 16 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: data-dir-persistent-state | Last commit: 17d ago
+• This branch has had no activity for over 17 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -491,8 +491,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — feature-enhancements
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: feature-enhancements | Last commit: 23d ago
-• This branch has had no activity for over 23 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: feature-enhancements | Last commit: 24d ago
+• This branch has had no activity for over 24 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -509,8 +509,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — fix-archive-collision
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: fix-archive-collision | Last commit: 17d ago
-• This branch has had no activity for over 17 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: fix-archive-collision | Last commit: 18d ago
+• This branch has had no activity for over 18 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -527,8 +527,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — fix-duplicate-ticket-locked
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: fix-duplicate-ticket-locked | Last commit: 16d ago
-• This branch has had no activity for over 16 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: fix-duplicate-ticket-locked | Last commit: 17d ago
+• This branch has had no activity for over 17 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -545,8 +545,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — fix-js-rendered-scraping
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: fix-js-rendered-scraping | Last commit: 23d ago
-• This branch has had no activity for over 23 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: fix-js-rendered-scraping | Last commit: 24d ago
+• This branch has had no activity for over 24 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -563,8 +563,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — fix-max-listeners
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: fix-max-listeners | Last commit: 17d ago
-• This branch has had no activity for over 17 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: fix-max-listeners | Last commit: 18d ago
+• This branch has had no activity for over 18 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -581,8 +581,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — guide-back-to-open-ticket
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: guide-back-to-open-ticket | Last commit: 21d ago
-• This branch has had no activity for over 21 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: guide-back-to-open-ticket | Last commit: 22d ago
+• This branch has had no activity for over 22 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -599,8 +599,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — macro-pagination
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: macro-pagination | Last commit: 18d ago
-• This branch has had no activity for over 18 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: macro-pagination | Last commit: 19d ago
+• This branch has had no activity for over 19 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -617,8 +617,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — macro-preview-copy
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: macro-preview-copy | Last commit: 18d ago
-• This branch has had no activity for over 18 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: macro-preview-copy | Last commit: 19d ago
+• This branch has had no activity for over 19 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -635,8 +635,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — macro-search-and-rewrite-sync
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: macro-search-and-rewrite-sync | Last commit: 18d ago
-• This branch has had no activity for over 18 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: macro-search-and-rewrite-sync | Last commit: 19d ago
+• This branch has had no activity for over 19 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -653,8 +653,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — macros-in-ai-context
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: macros-in-ai-context | Last commit: 17d ago
-• This branch has had no activity for over 17 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: macros-in-ai-context | Last commit: 18d ago
+• This branch has had no activity for over 18 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -671,8 +671,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — mod-bypass-ai-rate-limit
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: mod-bypass-ai-rate-limit | Last commit: 17d ago
-• This branch has had no activity for over 17 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: mod-bypass-ai-rate-limit | Last commit: 18d ago
+• This branch has had no activity for over 18 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -689,8 +689,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — mod-productivity
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: mod-productivity | Last commit: 21d ago
-• This branch has had no activity for over 21 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: mod-productivity | Last commit: 22d ago
+• This branch has had no activity for over 22 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -707,8 +707,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — mod-ticket-bypass
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: mod-ticket-bypass | Last commit: 17d ago
-• This branch has had no activity for over 17 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: mod-ticket-bypass | Last commit: 18d ago
+• This branch has had no activity for over 18 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -725,8 +725,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — scrape-once-serve-forever
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: scrape-once-serve-forever | Last commit: 22d ago
-• This branch has had no activity for over 22 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: scrape-once-serve-forever | Last commit: 23d ago
+• This branch has had no activity for over 23 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -743,8 +743,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — security-hardening
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: security-hardening | Last commit: 23d ago
-• This branch has had no activity for over 23 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: security-hardening | Last commit: 24d ago
+• This branch has had no activity for over 24 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -761,8 +761,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — skip-fresh-scrape
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: skip-fresh-scrape | Last commit: 16d ago
-• This branch has had no activity for over 16 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: skip-fresh-scrape | Last commit: 17d ago
+• This branch has had no activity for over 17 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -779,8 +779,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — softer-mod-ping
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: softer-mod-ping | Last commit: 21d ago
-• This branch has had no activity for over 21 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: softer-mod-ping | Last commit: 22d ago
+• This branch has had no activity for over 22 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -797,8 +797,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — sync-docs-repo
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: sync-docs-repo | Last commit: 17d ago
-• This branch has had no activity for over 17 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: sync-docs-repo | Last commit: 18d ago
+• This branch has had no activity for over 18 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -815,8 +815,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — ticket-followup-ai
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: ticket-followup-ai | Last commit: 21d ago
-• This branch has had no activity for over 21 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: ticket-followup-ai | Last commit: 22d ago
+• This branch has had no activity for over 22 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -833,8 +833,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — ticketing-system
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: ticketing-system | Last commit: 21d ago
-• This branch has had no activity for over 21 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: ticketing-system | Last commit: 22d ago
+• This branch has had no activity for over 22 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -851,8 +851,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — unify-close-delete
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: unify-close-delete | Last commit: 17d ago
-• This branch has had no activity for over 17 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: unify-close-delete | Last commit: 18d ago
+• This branch has had no activity for over 18 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -869,8 +869,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — update-macros-from-docs
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: update-macros-from-docs | Last commit: 18d ago
-• This branch has had no activity for over 18 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: update-macros-from-docs | Last commit: 19d ago
+• This branch has had no activity for over 19 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
@@ -887,8 +887,8 @@ Your action: Your PR — check if it's ready to merge or needs a reviewer assign
 **Title:** Clean up stale branch — update-overview
 
 **Context:**
-• Repo: 0xblckmrq/human.tech.AI | Branch: update-overview | Last commit: 22d ago
-• This branch has had no activity for over 22 days. It may have been superseded by a merge or simply forgotten.
+• Repo: 0xblckmrq/human.tech.AI | Branch: update-overview | Last commit: 23d ago
+• This branch has had no activity for over 23 days. It may have been superseded by a merge or simply forgotten.
 
 **Current Status:**
 • Branch exists on remote. No open PR associated (or PR is already merged).
