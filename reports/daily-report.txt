@@ -1,5 +1,5 @@
-📊 DEV UPDATE — November 27, 2026
-Generated: 17:45 UTC
+📊 DEV UPDATE — November 28, 2026
+Generated: 16:30 UTC
 
 TL;DR: Quiet day — no notable commits or open items
 
